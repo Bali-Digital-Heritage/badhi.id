@@ -46,7 +46,30 @@
       </div>
     </div>
   </nav>
-</div>        
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
+});
+  </script>        
 
         <style>
 #home p, #home h1{
@@ -303,8 +326,11 @@
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="columns">
-
-                <div class="column">
+ <div class="column is-right">
+                    <h1 class="big-title">Projects</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
                     <p class="is-size-5">
                         BADHI's projects focus on bringing positive impacts to Balinese. Our projects encompass both tangible and intangible aspects of Balinese culture. Our current focus is on the preservation of temples and lontar manuscripts. More information about our projects will be available soon.
                     </p>
@@ -326,10 +352,7 @@
                     </div>
                 </div>
 
-                <div class="column is-right">
-                    <h1 class="big-title" style="text-align: right;">Projects</h1>
-                    <h2 class="subtitle"></h2>
-                </div>
+               
             </div>
         </div>
     </div>
@@ -343,7 +366,7 @@
                     <h1 class="big-title">Contact</h1>
                     <h2 class="subtitle"></h2>
                 </div>
-                <div class="column">
+                <div class="column is-two-thirds" >
                     <p class="is-size-5 has-text-grey mb-4">
                         If you are interested in supporting or joining our effort, reach out to us.
                     </p>

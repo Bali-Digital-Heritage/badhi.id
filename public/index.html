@@ -24,9 +24,9 @@
   <body>
     <!--[if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience. </p> <![endif]-->
   <main>
-        <div class="container is-max-desktop">
+        <div class="container is-max-desktop" >
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation" style="position:fixed;top:0;">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -38,16 +38,16 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
-          Home
+        <a class="navbar-item" href="#home">
+          BADHI
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="#about">
           About
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="#projects">
           Projects
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="#contact">
           Contact
         </a>
       </div>
@@ -55,7 +55,7 @@
   </nav>
 </div>        
 
-        <section class="hero is-fullheight">
+        <section class="hero is-fullheight" id="home">
     <!-- Hero content: will be in the middle -->
 
     <div class="hero-body">
@@ -104,7 +104,7 @@
         </div>
     </div>
 </section>        
-        <section class="hero is-fullheight">
+        <section class="hero is-fullheight" id="about">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
@@ -242,7 +242,7 @@
         </div>
     </div>
 </section>        
-        <section class="hero is-fullheight">
+        <section class="hero is-fullheight" id="projects">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
@@ -278,7 +278,7 @@
         </div>
     </div>
 </section>        
-        <section class="hero is-fullheight">
+        <section class="hero is-fullheight" id="contact">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
@@ -303,5 +303,16 @@
 </section>        
 
       </main>
+      <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
   </body>
 </html>

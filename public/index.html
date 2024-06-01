@@ -17,9 +17,8 @@
   <body>
     <!--[if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience. </p> <![endif]-->
   <main>
-        <div class="container is-max-desktop" >
-
-  <nav class="navbar p-2 pl-5 pr-5 has-shadow" role="navigation" aria-label="main navigation" style="position:fixed;top:0;border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
+        <div  style="position:fixed;top:0;left:0;width:100%;z-index:1000;">
+  <nav class="navbar p-1 pl-5 pr-5" role="navigation" style="background-color:rgba(0,0,0,0);" aria-label="main navigation" >
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -28,7 +27,13 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-
+  <style>
+  .navbar-item{
+    font-weight: bold;
+    font-size: 1rem;
+    color:var(--bulma-body-color);
+  }
+  </style>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="#home">
@@ -81,7 +86,7 @@
     line-height:1;
 }
     </style>
-<section class="hero is-fullheight" id="home" style="background: url('./assets/pexels-aronvisuals-1694621.jpg');background-size:cover">
+<section class="hero is-fullheight" id="home" style="background: url('./assets/bg31.jpg');background-size:cover">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
@@ -367,10 +372,10 @@
                     <h2 class="subtitle"></h2>
                 </div>
                 <div class="column is-two-thirds" >
-                    <p class="is-size-5 has-text-grey mb-4">
+                    <p class="is-size-5">
                         If you are interested in supporting or joining our effort, reach out to us.
                     </p>
-                    <p class="is-size-5 has-text-grey">
+                    <p class="is-size-5">
 
                         Contact:<br/> Kadek Ananta Satriadi, PhD<br/> badhi.program[at]gmail.com
 

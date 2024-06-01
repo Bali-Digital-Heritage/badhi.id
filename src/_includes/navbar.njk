@@ -1,6 +1,5 @@
-<div class="container is-max-desktop" >
-
-  <nav class="navbar p-2 pl-5 pr-5 has-shadow" role="navigation" aria-label="main navigation" style="position:fixed;top:0;border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
+<div  style="position:fixed;top:0;left:0;width:100%;z-index:1000;">
+  <nav class="navbar p-1 pl-5 pr-5" role="navigation" style="background-color:rgba(0,0,0,0);" aria-label="main navigation" >
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -9,7 +8,13 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-
+  <style>
+  .navbar-item{
+    font-weight: bold;
+    font-size: 1rem;
+    color:var(--bulma-body-color);
+  }
+  </style>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="#home">

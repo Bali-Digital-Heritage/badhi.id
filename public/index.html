@@ -78,15 +78,32 @@
 
         <style>
 #home p, #home h1{
-      text-shadow: 2px 2px 2px #555;
+      text-shadow: 2px 2px 6px #888;
 }
 .big-title {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight:bold;
     line-height:1;
 }
+#background-video {
+   width: 100vw;
+   height: 100vh;
+   object-fit: cover;
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: -1;
+}
+section{
+background: white;
+}
     </style>
-<section class="hero is-fullheight" id="home" style="background: url('./assets/temple.jpg');background-size:cover">
+<video id="background-video" autoplay loop muted poster="./assets/templepc.jpg">
+  <source src="./assets/bg720.webm" type="video/mp4">
+</video>
+<section class="hero is-fullheight" id="home" style="background: transparent;background-size:cover">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
@@ -337,6 +354,23 @@
     <div class="media">
       <div class="media-content is-size-6">
         <p><b>Joshua Seguin</b></p>
+        <p><i>Monash University</i></p>
+      </div>
+    </div>
+
+    <div class="content ">
+     
+    </div>
+  </div>
+</div>
+                                    </div>
+                                
+                                    <div class="cell is-col-min-3">
+                                        <div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content is-size-6">
+        <p><b>Patrick Olivier</b></p>
         <p><i>Monash University</i></p>
       </div>
     </div>

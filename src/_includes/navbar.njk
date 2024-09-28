@@ -1,5 +1,5 @@
-<div  style="position:fixed;top:0;left:0;width:100%;z-index:1000;">
-  <nav class="navbar p-1 pl-5 pr-5" role="navigation" style="background-color:rgba(0,0,0,0);" aria-label="main navigation" >
+<div style="position:fixed;top:0;left:0;width:100%;z-index:1000;">
+  <nav class="navbar p-1 pl-5 pr-5" role="navigation" id="mainnav" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -8,51 +8,84 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-  <style>
-  .navbar-item{
-    font-weight: bold;
-    font-size: 1rem;
-    color:var(--bulma-body-color);
-  }
-  </style>
     <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item" href="#home">
-          BADHI
-        </a>
-        <a class="navbar-item" href="#about">
-          About
-        </a>
-        <a class="navbar-item" href="#projects">
-          Projects
-        </a>
-        <a class="navbar-item" href="#contact">
-          Contact
-        </a>
+      <div class="navbar-start is-justify-content-center" id="navbg">
+        <a class="navbar-item" href="#home">BADHI</a>
+        <a class="navbar-item" href="#about">About</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#projects">
+            Projects
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#map">
+              Bali Temples Map
+            </a>
+            <a class="navbar-item" href="#archive">
+              Temples Digital Archiving
+            </a>
+            <a class="navbar-item" href="#lontar">
+              Lontar
+            </a>
+          </div>
+        </div>
+        <a class="navbar-item" href="#contact">Team</a>
       </div>
     </div>
   </nav>
 </div>
+<style>
+  #navbg {
+    width: 500px;
+    background: white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0 10px;
+  }
+  #mainnav {
+    background-color: rgba(0,0,0,0);
+    .navbar-item {
+      font-size: 1.25rem;
+    }
+
+    .navbar-start {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 1023px) {
+      .navbar-start {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+</style>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
-  // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array
+      .prototype
+      .slice
+      .call(document.querySelectorAll('.navbar-burger'), 0);
 
-  // Add a click event on each of them
-  $navbarBurgers.forEach( el => {
-    el.addEventListener('click', () => {
+    // Add a click event on each of them
+    $navbarBurgers.forEach(el => {
+      el.addEventListener('click', () => {
 
-      // Get the target from the "data-target" attribute
-      const target = el.dataset.target;
-      const $target = document.getElementById(target);
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
 
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      el.classList.toggle('is-active');
-      $target.classList.toggle('is-active');
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el
+          .classList
+          .toggle('is-active');
+        $target
+          .classList
+          .toggle('is-active');
 
+      });
     });
-  });
 
-});
-  </script>
+  });
+</script>

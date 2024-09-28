@@ -1,0 +1,8 @@
+:root {
+    --bulma-body-family: "Roboto Slab", serif;
+  }
+
+  .img{
+    border-radius:10px;
+        box-shadow: 0px 0px 10px;
+    }

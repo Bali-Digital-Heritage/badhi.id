@@ -1,6 +1,10 @@
 :root {
     --bulma-body-family: "Roboto Slab", serif;
+    --bulma-link: #9E7056;
+    --bulma-link-text: #9E7056;
+
   }
+
 
   .img{
     border-radius:10px;

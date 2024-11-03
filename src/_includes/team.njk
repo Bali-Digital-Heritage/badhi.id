@@ -2,38 +2,40 @@
     <div class="has-text-grey mb-3">Collaborating academics:</div>
     {% set cards = [
                             {
-                                "name": "Kadek A. Satriadi",
-                                "subtitle": "Monash University",
+                                "name": "Kadek Ananta Satriadi",
+                                "subtitle": "Emvis, Monash University",
                                 "description": ""
-                            }, {
-                                "name": "Bernhard Jenny",
-                                "subtitle": "Monash University",
-                                "description": ""
-                            }, {
-                                "name": "Thomas Chandler",
-                                "subtitle": "Monash University",
-                                "description": ""
-                            }, {
+                            }, 
+                             {
                                 "name": "Made Windu Antara Kesiman",
-                                "subtitle": "Universitas Pendidikan Ganesha",
+                                "subtitle": "VVIP, Undiksha",
+                                "description": ""
+                            },
+                            {
+                                "name": "Bernhard Jenny",
+                                "subtitle": "Emvis, Monash University",
                                 "description": ""
                             }, {
                                 "name": "Putu Hendra Saputra ",
-                                "subtitle": "Universitas Pendidikan Ganesha",
+                                "subtitle": "VVIP, Undiksha",
                                 "description": ""
-                            }, {
+                            },{
+                                "name": "Thomas Chandler",
+                                "subtitle": "Emvis, Monash University",
+                                "description": ""
+                            },  {
                                 "name": "I Gede Mahendra Darmawiguna",
-                                "subtitle": "Universitas Pendidikan Ganesha",
+                                "subtitle": "VVIP, Undiksha",
                                 "description": ""
                             },
                             {
                                 "name": "Viviane Frings-Hessami",
-                                "subtitle": "Monash University",
+                                "subtitle": "Digital Transformation, Monash University",
                                 "description": ""
                             },
                             {
                                 "name": "Joshua Seguin",
-                                "subtitle": "Monash University",
+                                "subtitle": "Action Lab, Monash University",
                                 "description": ""
                             }
                         ] %}
@@ -50,6 +52,30 @@
                             }
                         ] %}
 
+{% set ras = [
+                            {
+                                "name": "Kadek Teguh Dermawan",
+                                "subtitle": "Undiksha",
+                                "description": ""
+                            },  {
+                                "name": "I Putu Bayu Ananta Surya",
+                                "subtitle": "Undiksha",
+                                "description": ""
+                            }, {
+                                "name": "I Kadek Dwi Angga Sathya Nanda",
+                                "subtitle": "Undiksha",
+                                "description": ""
+                            },{
+                                "name": "I Gede Danan Aria Satwika Punia",
+                                "subtitle": "Undiksha",
+                                "description": ""
+                            },{
+                                "name": "Lanang Surya Darma",
+                                "subtitle": "Undiksha",
+                                "description": ""
+                            }
+                        ] %}
+
     <div class="fixed-grid has-3-cols">
         <div class="grid">
             {% for card in cards %}
@@ -59,6 +85,19 @@
             {% endfor %}
         </div>
     </div>
+    
+     <div class="has-text-grey mb-3">Research assistants:</div>
+
+    <div class="fixed-grid has-3-cols">
+        <div class="grid">
+            {% for card in ras %}
+                <div class="cell is-col-min-3">
+                    {% include "card.njk" %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
     <div class="has-text-grey mb-3">Research students:</div>
 
     <div class="fixed-grid has-3-cols">

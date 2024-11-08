@@ -19,6 +19,24 @@
         </div>
       </div>
     </div>
+    <img class="bg-dec-img" src="assets/badhi-half_1.svg" />
+
   </div>
 </div>
 </section>
+<style>
+.bg-dec-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 70%;
+  z-index: -100;
+}
+
+/* Hide element below 768px (typical tablet breakpoint) */
+@media screen and (max-width: 768px) {
+  .bg-dec-img {
+    display: none;
+  }
+}
+</style>

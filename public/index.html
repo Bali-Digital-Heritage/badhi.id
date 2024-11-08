@@ -14,7 +14,7 @@
 
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/versions/bulma-no-dark-mode.css"/>
         <link rel="stylesheet" href="/assets/style.css"/>
 
         <style>
@@ -25,8 +25,8 @@
   <body>
     <!--[if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience. </p> <![endif]-->
     <main>
-      <div style="position:fixed;top:0;left:0;width:100%;z-index:1000;">
-  <nav class="navbar p-1 pl-5 pr-5" role="navigation" id="mainnav" aria-label="main navigation">
+      <div>
+  <nav class="navbar" role="navigation" id="mainnav" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
@@ -118,25 +118,6 @@
 </script>
 
       <style>
-  .big-title {
-    font-size: 4rem;
-    font-weight: bold;
-    line-height: 1;
-  }
-  #background-video {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-  section {
-    background: white;
-  }
   .logo {
     width: 690px;
   }
@@ -167,9 +148,8 @@
         <div class="container is-max-desktop">
             <div class="columns">
                 <div class="column">
-                    <h1 class="big-title">About</h1>
+                    <h1 class="title is-size-1">About</h1>
                     <h2 class="subtitle"></h2>
-
                 </div>
                 <div class="column is-two-thirds">
                     <p class="is-size-5">
@@ -186,7 +166,7 @@
         <div class="container is-max-desktop">
             <div class="columns">
                 <div class="column">
-                    <h1 class="title big-title">Projects</h1>
+                    <h1 class="title is-size-1">Projects</h1>
                     <h2 class="subtitle"></h2>
                 </div>
                 <div class="column is-two-thirds">
@@ -205,8 +185,7 @@
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
-            <h1 class="title">Bali Temples Map</h1>
-            <h2 class="subtitle"></h2>
+            <h1 class="title">Temples</h1>
             <p class="is-size-5">
                 An interactive map depicting the locations of documented temples across Bali.
                 Go to the <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">map</a>. 

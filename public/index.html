@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]> <html class="no-js"> <!--<![endif]-->
-<html>
+  <html>
       <head>
         <meta charset="utf-8"/>
         <meta name="viewport"  data-theme="light" content="width=device-width, initial-scale=1">
@@ -22,101 +21,10 @@
         </style>
 
     </head>
-  <body>
-    <!--[if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience. </p> <![endif]-->
-    <main>
-      <div>
-  <nav class="navbar" role="navigation" id="mainnav" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start is-justify-content-center" id="navbg">
-        <a class="navbar-item" href="#home">BADHI</a>
-        <a class="navbar-item" href="#about">About</a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#projects">
-            Projects
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#map">
-              Bali Temples Map
-            </a>
-            <a class="navbar-item" href="#archive">
-              Participatory Digital Archiving
-            </a>
-            <a class="navbar-item" href="#lontar">
-              Lontar
-            </a>
-          </div>
-        </div>
-        <a class="navbar-item" href="#contact">Team</a>
-      </div>
-    </div>
-  </nav>
-</div>
-<style>
-  #navbg {
-    width: 500px;
-    background: white;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 0 10px;
-  }
-  #mainnav {
-    background-color: rgba(0,0,0,0);
-    .navbar-item {
-      font-size: 1.25rem;
-    }
-
-    .navbar-start {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media screen and (max-width: 1023px) {
-      .navbar-start {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-</style>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array
-      .prototype
-      .slice
-      .call(document.querySelectorAll('.navbar-burger'), 0);
-
-    // Add a click event on each of them
-    $navbarBurgers.forEach(el => {
-      el.addEventListener('click', () => {
-
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el
-          .classList
-          .toggle('is-active');
-        $target
-          .classList
-          .toggle('is-active');
-
-      });
-    });
-
-  });
-</script>
-
+    <body>
+    <!-- [if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please <a
+    href="#">upgrade your browser</a> to improve your experience. </p> <![endif] -->
+      <main>
       <style>
   .logo {
     width: 690px;
@@ -153,131 +61,73 @@
                 </div>
                 <div class="column is-two-thirds">
                     <p class="is-size-5">
-                        BADHI is a joint effort among Australian and Indonesian academics who believe that current and future digital technology offers opportunities to improve the preservation and utilisation of Bali's cultural heritage for social good.
+                        Established in 2024, BADHI is a joint effort among Australian and Indonesian academics who believe that current and future digital technology offers opportunities to improve the preservation and utilisation of Bali's cultural heritage for social good.
                     </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-      <section class="hero is-fullheight" id="projects">
+      <section
+    class="hero is-fullheight" id="projects">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="columns">
                 <div class="column">
-                    <h1 class="title is-size-1">Projects</h1>
+                    <h1 class="title is-size-1">Heritages</h1>
                     <h2 class="subtitle"></h2>
                 </div>
                 <div class="column is-two-thirds">
                     <p class="is-size-5">
-                        BADHI's projects focus on bringing positive impacts to Balinese. Our projects encompass both tangible and intangible aspects of Balinese culture. Our current focus is on the preservation of temples and lontar manuscripts.
+                        BADHI's projects focus on bringing positive impacts to Balinese. Our projects encompass both tangible and intangible
+                        aspects of Balinese culture. Our current focus is on the preservation of temples and lontar manuscripts.
                     </p>
+                </div>
+            </div>
+            <div class="mb-5 mt-5">
+                <h1 class="title">Temples</h1>
+                <figure class="image mt-4">
+                    <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">
+                        <img class="img" src="assets/pexels-elina-sazonova-1850547-2.jpg"/>
+                    </a>
+                </figure>
+                <div class="content mt-3">
+                    <b>Temples — </b>For centuries, Bali's ancient temples have faced cycles of destruction and rebuilding. Today, we're creating sustainable solutions to preserve these sacred monuments for generations to come.
+                    We are currently undertaking the "<a href="/projects/participatory-digital-archiving"  title="Participatory Digital Archiving">Participatory Digital Archiving</a>" project. 
 
                 </div>
+                
+            </div>
 
+            <div>
+                <h1 class="title">Lontar</h1>
+                <figure class="image mt-4">
+                    <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">
+                        <img src="assets/Arjunawiwaha_canto_5.jpg"/>
+                    </a>
+                </figure>
+                <div class="content mt-3">
+                    Responsible machine learning techniques to safeguard and interpret the knowledge contained in traditional Balinese palm leaf manuscripts.
+                </div>
             </div>
         </div>
     </div>
 </section>
-
-      <section class="hero is-fullheight" id="map">
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <h1 class="title">Temples</h1>
-            <p class="is-size-5">
-                An interactive map depicting the locations of documented temples across Bali.
-                Go to the <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">map</a>. 
-            </p>
-            <p></p>
-            <figure class="image mt-4">
-                <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">
-                <img class="img" src="assets/peta-pura-bali.png"/>
-                </a>
-            </figure>
-        </div>
-    </div>
-</section>
-
-      <section class="hero is-fullheight" id="archive">
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <h1 class="title">Participatory Digital Archiving</h1>
-            <h2 class="subtitle"></h2>
-            <p class="is-size-5">
-                Community participation and advanced 3D reconstruction to archive Balinese temples.  Go to the <a href="/projects/participatory-digital-archiving"  title="Participatory Digital Archiving">page</a>. 
-
-            </p>
-            <p></p>
-            <figure class="image is-16by9 mt-4">
-                <iframe  class="img" class="has-ratio" width="100%" height="560" src="./assets/bg720.webm" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-            </figure>
-            <p>This project is funded by the <a href="https://www.monash.edu/it/whyte-fund/home" target="_blank">Whyte Fund Monash University</a>.</p>
-        </div>
-    </div>
-</section>
-
-      <section class="hero is-fullheight" id="lontar">
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <h1 class="title">Lontar</h1>
-            <h2 class="subtitle"></h2>
-            <p class="is-size-5">
-                Advanced machine learning to safeguard and interpret the knowledge contained in traditional Balinese palm leaf manuscripts.
-            </p>
-            <p></p>
-             <figure class="image mt-6">
-                <img class="p-5" src="assets/Arjunawiwaha_canto_5.jpg"/>
-            </figure>
-        </div>
-    </div>
-</section>
-
-      <section class="hero is-fullheight" id="contact">
+      <section class="hero is-fullheight" id="about">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="columns">
                 <div class="column">
-                    <h1 class="big-title">Team</h1>
+                    <h1 class="title is-size-1">Team</h1>
                     <h2 class="subtitle"></h2>
-                    <p class="is-size-6">
-                        If you are interested in supporting or joining our effort, please reach out to us.
-                    </p>
-                    <p class="is-size-6">
-                        Kadek Ananta Satriadi, PhD<br/>
-                        badhi.program[at]gmail.com
-                    </p>
-                    <p class="is-size-6 card p-3 mt-4">
-                       If you are interested in <b>PhD</b> around this topic, let use know by sending an expression of interest <a href="https://supervisorconnect.it.monash.edu/projects/research/visualisation-technology-cultural-heritage-preservation" target="_blank"> here</a>.
-                    </p>
-                    <p class="is-size-6 mt-4 mb-4">
-                        Several related links:<br/>
-                    </p>
-                    <div class="mb-3">
-                        <a href="https://aksalont.mudratech.org/" target="_blank" class="is-size-5">AKSALont</a><br/>
-                        <small>Automatic Transliteration Application for Balinese Palm Leaf Manuscripts.</small>
-                    </div>
-                    <div class="mb-3">
-                        <a href="https://www.virtualangkor.com/" target="_blank" class="is-size-5">Virtual Angkor</a><br/>
-                        <small>Digitalisation of Angkor Wat temple. A past project of Dr. Chandler.</small>
-                    </div>
-                    <div class="mb-3">
-                        <a href="https://research.undiksha.ac.id/vvip-rg/" target="_blank" class="is-size-5">VVIP Research Group</a><br/>
-                        <small>Research group at Universitas Pendidikan Ganesha led by Dr. Kesiman.</small>
-                    </div>
-                    <div class="mb-3">
-                        <a href="https://www.monash.edu/it/hcc/embodied-visualisation" target="_blank" class="is-size-5">Embodied Visualisation Group</a><br/>
-                        <small>Research group at Monash University.</small>
-                    </div>
-
-                    
                 </div>
                 <div class="column is-two-thirds">
-                    <p class="mt-3">
+                </div>
+            </div>
+                
+<p class="mt-3">
     <div class="has-text-grey mb-3">Collaborating academics:</div>
     
 
@@ -567,27 +417,76 @@
     <div class="mt-3"></div>
     <div class="is-size-6">Prof. Tim Dwyer, Prof. Patrick Olivier, A/Prof. Gilian Oliver, Prof. Juliana Sutanto, Komunitas Wikimedia Denpasar</div>
 </p>
-                </div>
-            </div>
         </div>
     </div>
 </section>
 
+
+      <section
+    class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">Contact Us</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="is-size-5">
+                        If you are interested in supporting or joining our effort, please reach out to us. Kadek Ananta Satriadi, PhD<br/> badhi.program[at]gmail.com
+                    </p>
+                    <div>
+                <p class="is-size-6 card p-3 mt-4">
+                    If you are interested in
+                    <b>PhD</b>
+                    around this topic, let use know by sending an expression of interest
+                    <a
+                        href="https://supervisorconnect.it.monash.edu/projects/research/visualisation-technology-cultural-heritage-preservation"
+                        target="_blank">
+                        here</a>.
+                </p>
+                <p class="is-size-6 mt-4 mb-4">
+                    Several related links:<br/>
+                </p>
+                <div class="mb-3">
+                    <a href="https://research.undiksha.ac.id/vvip-rg/" target="_blank" class="is-size-5">VVIP Research Group</a><br/>
+                </div>
+                <div class="mb-3">
+                    <a href="https://www.monash.edu/it/hcc/embodied-visualisation" target="_blank" class="is-size-5">Embodied Visualisation
+                        Group</a><br/>
+                </div>
+                <div class="mb-3">
+                    <a href="https://aksalont.mudratech.org/" target="_blank" class="is-size-5">AKSALont</a><br/>
+                    <small>Automatic Transliteration Application for Balinese Palm Leaf Manuscripts.</small>
+                </div>
+                <div class="mb-3">
+                    <a href="https://www.virtualangkor.com/" target="_blank" class="is-size-5">Virtual Angkor</a><br/>
+                    <small>Digitalisation of Angkor Wat temple. A past project of Dr. Chandler.</small>
+                </div>
+            </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+        <footer class="footer"> <div class="content has-text-centered">
+          <p>
+            <strong>Bali Digital Heritage Initiative</strong> website. Last updated November 2024.
+          </p>
+        </div>
+      </footer>
     </main>
     <script>
-      document
-        .querySelectorAll('nav a')
-        .forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this
-              .getAttribute('href')
-              .substring(1);
-            document
-              .getElementById(targetId)
-              .scrollIntoView({behavior: 'smooth'});
-          });
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
         });
+      });
     </script>
   </body>
 </html>

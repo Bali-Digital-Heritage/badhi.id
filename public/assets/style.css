@@ -1,14 +1,32 @@
 :root {
-    --bulma-body-family: "Roboto Slab", serif;
-    --bulma-link: #9E7056;
-    --bulma-link-text: #9E7056;
-    --bulma-primary-h: 22deg;
-    --bulma-primary-s: 29%;
-    --bulma-primary-l: 47%;
-  }
+  --bulma-body-family: "Poppins", sans-serif;
+  --bulma-link: #9e7056;
+  --bulma-link-text: #9e7056;
+  --bulma-primary-h: 22deg;
+  --bulma-primary-s: 29%;
+  --bulma-primary-l: 47%;
+}
+
+.img {
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px;
+}
+
+.team-card-name {
+  min-height: 60px;
+}
+.team-card {
+  min-height: 270px;
+}
+.team-card-dec {
+  width: 50px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
 
 
-  .img{
-    border-radius:10px;
-        box-shadow: 0px 0px 10px;
-    }
+.is-fixed-bottom{
+  position: absolute;
+  bottom: 10px;
+}

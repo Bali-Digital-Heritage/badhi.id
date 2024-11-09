@@ -54,7 +54,7 @@
                                 "name": "Yaoying Huang",
                                 "lab": "Embodied Visualisation",
                                 "institution": "Monash University",
-                                "description": "Yaoying investigated machine learning models for effective transliteration of Balinese script written on lontar."
+                                "description": "Yaoying investigates machine learning models for effective transliteration of Balinese script written on lontar."
                             }, {
                                 "name": "Anthony Wilson",
                                 "lab": "Embodied Visualisation",
@@ -92,34 +92,34 @@
                             }
                         ] %}
 
-    <div class="fixed-grid has-3-cols" >
-        <div class="grid">
+    <div class="container" >
+        <div class="columns is-multiline">
             {% for card in cards %}
-                <div class="name-card cell is-col-min-3">
+                <div class="column is-3 is-4-fullhd is-4-desktop is-6-tablet is-12-mobile">
                     {% include "team-card.njk" %}
                 </div>
             {% endfor %}
         </div>
     </div>
     
-     <div class="has-text-grey mb-3">Research assistants:</div>
+     <div class="has-text-grey mb-3 mt-5">Research assistants:</div>
 
-    <div class="fixed-grid has-3-cols">
-        <div class="grid">
+     <div class="container" >
+        <div class="columns is-multiline">
             {% for card in ras %}
-                <div class="cell is-col-min-3">
+                <div class="column is-3 is-4-fullhd is-4-desktop is-6-tablet is-12-mobile">
                     {% include "team-card.njk" %}
                 </div>
             {% endfor %}
         </div>
     </div>
 
-    <div class="has-text-grey mb-3">Research students:</div>
+    <div class="has-text-grey mb-3 mt-5">Research students:</div>
 
-    <div class="fixed-grid has-3-cols">
-        <div class="grid">
+  <div class="container" >
+        <div class="columns is-multiline">
             {% for card in students %}
-                <div class="cell is-col-min-3">
+                <div class="column is-3 is-4-fullhd is-4-desktop is-6-tablet is-12-mobile">
                     {% include "team-card.njk" %}
                 </div>
             {% endfor %}

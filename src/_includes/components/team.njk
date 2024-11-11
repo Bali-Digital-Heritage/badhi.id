@@ -1,0 +1,18 @@
+<section class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">                        {{ i18n[page.lang].team.title }}
+</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+               {{ i18n[page.lang].team.maintext | safe }}
+</div>
+            </div>
+                {% include "team-member.njk" %}
+        </div>
+    </div>
+</section>

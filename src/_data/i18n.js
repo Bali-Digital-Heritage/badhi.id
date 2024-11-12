@@ -1,10 +1,10 @@
 module.exports = {
     en: {
         nav:{
-            switchto: 'Switch content to ',
+            switchto: 'Ganti ke bahasa ',
             backtolanding: 'Back to homepage',
             langenglish: 'English',
-            langindo: 'Indonesian'
+            langindo: 'Indonesia'
         },
         hero: {
             vision: "Empower Balinese communities in the preservation of Balinese culture through responsible, sustainable, innovative, and collaborative digitisation efforts."
@@ -45,9 +45,9 @@ module.exports = {
     },
     id: {
         nav:{
-            switchto: 'Ganti ke bahasa',
+            switchto: 'Switch to ',
             backtolanding: 'Kembali ke Halaman Utama',
-             langenglish: 'Inggris',
+             langenglish: 'English',
             langindo: 'Bahasa Indonesia'
         },
         hero: {
@@ -71,9 +71,9 @@ module.exports = {
         },
         contact:{
             title: "Hubungi Kami",
-            follow: "Ikuti perkembangan kami di ",
+            follow: "Ikuti perkembangan kami atau kontak kami di ",
             link: "Beberapa tautan terkait:",
-            maintext: 'Jika Anda tertarik untuk mendukung, berpartisipasi, atau memiliki pertanyaa, silakan hubungi kami di badhi.program[at]gmail.com',
+            maintext: 'Jika Anda tertarik untuk mendukung, berpartisipasi, atau memiliki pertanyaan, silakan hubungi kami di <b>badhi.program[at]gmail.com</b>',
             phdtext: 'Kami juga membuka peluang untuk riset <b>PhD</b> seputar topik teknologi dan budaya, kirim expression of interest <a href="https://supervisorconnect.it.monash.edu/projects/research/visualisation-technology-cultural-heritage-preservation" target="_blank">di sini</a>.'
         },
         team: {
@@ -83,7 +83,7 @@ module.exports = {
             ratext: 'Asisten peneliti',
             studenttext: 'Mahasiswa peneliti',
             supportedby: 'Upaya kami juga didukung oleh:',
-            specialthanks: 'Terima kasih khusus kepada Ketut Wiryadana yang telah membuat logo kami.'
+            specialthanks: 'Terima kasih kepada saudara Ketut Wiryadana yang telah membuat logo kami.'
         }
     }
 }

@@ -13,6 +13,10 @@ module.exports = {
             title: "About", 
             maintext: "Established in 2024, BADHI is a joint effort among Australian and Indonesian academics who believe that current and future digital technology offers opportunities to improve the preservation and utilisation of Bali's cultural heritage for social good."
         },
+        temple:{
+            title: "Temples Archival Project",
+            maintext: 'We aim to create the first 3D archives of around 5,000 Balinese temples by employing advanced 3D reconstruction techniques combined with participatory archival approach. See the interactive example on <a class="text-shadow" href="https://sanggah.badhi.id" target="_blank">https://sanggah.badhi.id</a>'
+        },
         projects:{
             title: "Heritages",
             maintext: "BADHI's projects aim to create lasting value for the Balinese people through cultural preservation. Our work spans both tangible and intangible heritage, with current projects focused on temple digital archival and lontar manuscript conservation.",
@@ -56,6 +60,10 @@ module.exports = {
         about:{
             title: "Tentang", 
             maintext: "Didirikan pada tahun 2024, BADHI merupakan upaya bersama antara akademisi Australia dan Indonesia yang meyakini bahwa teknologi digital saat ini dan masa depan memberikan peluang untuk meningkatkan pelestarian dan pemanfaatan warisan budaya Bali demi kebaikan sosial."
+        },
+        temple:{
+            title: "Arsip 3D Digital Pura",
+            maintext: 'Kami berupaya untuk menciptakan arsip 3D pertama dari seluruh 5.000-an pura di Bali dengan menggunakan teknik rekonstruksi 3D terkini yang dikombinasikan dengan pendekatan arsip partisipatif. Lihat contoh interaktifnya di <a class="text-shadow" href="https://sanggah.badhi.id" target="_blank">https://sanggah.badhi.id</a>'
         },
         projects:{
             title: "Warisan Budaya",

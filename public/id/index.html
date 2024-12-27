@@ -27,7 +27,7 @@
       <main>
       <style>
     .logo {
-        width: 690px;
+        width: 490px;
     }
 </style>
 <section class="hero is-fullheight" id="home">
@@ -36,8 +36,8 @@
         <div class="container is-max-desktop">
             <div class="is-flex is-justify-content-center is-align-items-center ">
                 <div style="text-align:center">
-                    <img class="logo" src="/assets/badhi-logo-landscape.png" alt="Logo">
-                    <h1 class="title is-size-2 mt-2 has-text-black	">
+                    <img class="logo" src="/assets/logo-portrait.png" alt="Logo">
+                    <h1 class="title is-size-2 mt-5 has-text-black	">
                         Bali Digital Heritage Initiative
                     </h1>
                     <h2 class="subtitle mt-6">
@@ -52,6 +52,49 @@
                         
                     </div>
                 </div>
+
+            </div>
+            <div class="mt-3">
+                    <style>
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.scroll-text {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.chevron {
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100%{
+        transform:  translateY(0) rotate(45deg);
+    }
+    40% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+    60% {
+        transform: translateY(-2px) rotate(45deg);
+    }
+}
+</style>
+
+<div class="scroll-container">
+    <div class="chevron"></div>
+</div>
 
             </div>
         </div>
@@ -76,6 +119,68 @@
     }
 }
 </style>
+      <style>
+    .logo-small {
+        width: 100px;
+    }
+
+    .hero.is-fullheight {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .video-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .text-shadow{
+    text-shadow: 0px 2px 6px black;
+    }
+</style>
+
+<section class="hero is-fullheight" id="temple">
+    <div class="hero-body info-parent">
+        <!-- video -->
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="/assets/Video-Sanggah.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- end video -->
+        
+        <div class="container is-max-desktop">
+            <div class="columns is-vcentered text-shadow ">
+                <div class="column">
+                    <h1 class="title is-size-1 has-text-white-bis">Arsip 3D Digital Pura</h1>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="is-size-5 has-text-white-bis">
+                        Kami berupaya untuk menciptakan arsip 3D pertama dari seluruh 5.000-an pura di Bali dengan menggunakan teknik rekonstruksi 3D terkini yang dikombinasikan dengan pendekatan arsip partisipatif. Lihat contoh interaktifnya di <a class="text-shadow" href="https://sanggah.badhi.id" target="_blank">https://sanggah.badhi.id</a>                
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
       <section class="hero is-fullheight" id="about">
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">

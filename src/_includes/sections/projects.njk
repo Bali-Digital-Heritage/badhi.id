@@ -1,0 +1,51 @@
+<section class="hero is-fullheight" id="projects">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">
+                        {{ i18n[page.lang].projects.title }}</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="is-size-5">
+                        {{ i18n[page.lang].projects.maintext  | safe }}
+
+                    </p>
+                </div>
+            </div>
+            <div class="mb-5 mt-5">
+                <h1 class="title">
+                    {{ i18n[page.lang].projects.temples.title }}</h1>
+                <figure class="image mt-4">
+                    <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">
+                        <img class="img" src="/assets/pexels-elina-sazonova-1850547-2.jpg"/>
+                    </a>
+                </figure>
+                <div class="content mt-3">
+                    {{ i18n[page.lang].projects.temples.maintext | safe }}
+                </div>
+                <div>
+                <p><b>Projects:</b></p>
+                    <a href="{{ '/projects/participatory-digital-archiving' | locale_url }}"  title="Participatory Digital Archiving">Participatory Digital Archiving</a>.
+                </div>
+
+            </div>
+
+            <div>
+                <h1 class="title">
+                    {{ i18n[page.lang].projects.lontar.title  }}
+                </h1>
+                <figure class="image mt-4">
+                    <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">
+                        <img src="/assets/Arjunawiwaha_canto_5.jpg"/>
+                    </a>
+                </figure>
+                <div class="content mt-3">
+                    {{ i18n[page.lang].projects.lontar.maintext  | safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,57 @@
+<div class="level">
+    <div class="level-item">
+        <div>
+            <img src="assets/video-p27.png" style="max-width:150px" />
+            <p>Video contribution</p>
+        </div>
+    </div>
+    <div class="level-item">
+        <div>
+            <img class="img" src="assets/p27-images.png" style="max-width: 200px"/>
+            <p>Frames selection</p>
+        </div>
+         <div class="mt-5">
+            <img class="img" src="assets/training.png" style="max-width: 200px"/>
+            <p>Reconstruction</p>
+        </div>
+    </div>
+    <div class="level-item">
+        <div>
+            <video width="900" controls class="img">
+                <source src="assets/p27-render.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>            
+            <p>Final 3D Models</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.level {
+    display: flex;
+    align-items: flex-end; /* Aligns items to the bottom */
+}
+
+.level-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.level-item > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.level-item img,
+.level-item video {
+    margin-bottom: auto; /* Pushes the paragraph to the bottom */
+}
+
+.level-item p {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>

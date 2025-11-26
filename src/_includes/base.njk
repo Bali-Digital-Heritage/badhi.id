@@ -6,28 +6,33 @@
   <html>
   {% include "head.njk" %}
     <body>
-    <!-- [if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please <a
+    <!-- [if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please 
     href="#">upgrade your browser</a> to improve your experience. </p> <![endif] -->
-      <main>
-      {% include "components/hero.njk" %}
-      {% include "components/teaser.njk" %}
-      {% include "components/about.njk" %}
-      {% include "components/projects.njk" %}
-      {% include "components/team.njk" %}
-      {% include "components/contact.njk" %}
+      
+     {% include "sections/navbar-common.njk" %}
+
+    {{content | safe}}
+
+    
         <footer class="footer"> <div class="content has-text-centered">
           <p>
-            <strong>Bali Digital Heritage Initiative</strong> website. Last updated November 2024. Send your feedback or issue to badhi.program[at]gmail.com.
+            <strong>Bali Digital Heritage Initiative</strong> website. Last updated November 2025. Send your feedback or issue to badhi.program[at]gmail.com.
           </p>
         </div>
       </footer>
     </main>
     <script>
-      document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1);
-          document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
+
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
         });
       });
     </script>

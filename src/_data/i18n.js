@@ -14,7 +14,7 @@ module.exports = {
             maintext: "Established in 2024, BADHI is a joint effort among Australian and Indonesian academics who believe that current and future digital technology offers opportunities to improve the preservation and utilisation of Bali's cultural heritage for social good."
         },
         temple:{
-            title: "Temples Archival Project",
+            title: "We create a platform for 3D-recording more than 5,000 Balinese temples, <br/> sustainably and collaboratively.",
             maintext: 'We aim to create the first 3D archives of around 5,000 Balinese temples by employing advanced 3D reconstruction techniques combined with participatory archival approach. See the interactive example on <a class="text-shadow" href="https://sanggah.badhi.id" target="_blank">https://sanggah.badhi.id</a>'
         },
         projects:{

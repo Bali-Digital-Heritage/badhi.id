@@ -1,0 +1,1065 @@
+ <main style="padding-top: 52px;">
+      <style>
+    .logo-small {
+        width: 100px;
+    }
+
+    .hero.is-fullheight {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .video-container {
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+        margin-top: 2rem;
+    }
+
+    .tab-content {
+        display: none;
+        height: 760px;
+    }
+
+    .tab-content.is-active {
+        display: block;
+    }
+
+    .tabs li {
+        border: 1px solid lightgray;
+    }
+
+    .tab-list li a {
+        cursor: pointer;
+    }
+</style>
+
+<section class="hero is-fullheight" id="temple">
+    <div class="hero-body info-parent">
+        <div class="container">
+            <h1 class="has-text-centered is-size-1 has-text-weight-semibold">Bali Digital Heritage Initiative</h1>
+            <h2 class="has-text-centered is-size-4 pb-5">We create a platform for 3D-recording more than 5,000 Balinese temples, <br/> sustainably and collaboratively.</h1>
+
+<!-- Tabs Navigation -->
+            <div class="tabs is-centered mt-5">
+                <ul class="tabs-list">
+                    <li class="is-active" data-tab="overview">
+                        <a class="is-size-5">Overview</a>
+                    </li>
+                    <li data-tab="importance">
+                        <a class="is-size-5 ">Future Investment</a>
+                    </li>
+                    <li data-tab="approach">
+                        <a class="is-size-5 ">Our Approach</a>
+                    </li>
+                    <li data-tab="family">
+                        <a class="is-size-5 ">Family Temples</a>
+                    </li>
+                    <li data-tab="public">
+                        <a class="is-size-5 ">Public Temples</a>
+                    </li>
+                    <li data-tab="applications">
+                        <a class="is-size-5">Applications</a>
+                    </li>
+                </ul>
+            </div>
+<!-- End Tabs Navigation -->
+
+            <!-- Overview Content -->
+            <div id="overview-content" class="tab-content is-active">
+                <figure class="image mt-4">
+                    <img class="img" src="/assets/badhi-banner-cut-min.png" alt="Temple Overview"/>
+                </figure>
+                 <div class="mt-5 has-text-centered"> <p>We aim to empower Balinese communities to preserve their cultural heritage for future generations. 
+                 We believe participatory approach — data by people for people — is the best way to achieve documentation that is sustainable and at scale. </p></div>
+            </div>
+            <!-- end Overview Content -->
+
+            <!-- Importance Content -->
+            <div id="importance-content" class="tab-content">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        svg {
+            font-family: 'Poppins', sans-serif;
+            margin: 20px;
+            background: #fff;
+        }
+        #timeline svg {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+        }
+        .tooltip {
+            position: absolute;
+            background: white;
+            border: 2px solid #231f20;
+            border-radius: 8px;
+            padding: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 250px;
+            z-index: 1000;
+        }
+        .tooltip.visible {
+            opacity: 1;
+        }
+        .tooltip-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #231f20;
+        }
+        .tooltip-subtitle {
+            font-weight: 400;
+            font-size: 11px;
+            margin-bottom: 6px;
+            color: #6d6e71;
+        }
+        .tooltip-description {
+            font-weight: 400;
+            font-size: 10px;
+            color: #231f20;
+            line-height: 1.4;
+        }
+    </style>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <div id="timeline"></div>
+
+    <script>
+        // Timeline data
+        const timelineData = {
+            // Past years (black dots) - now with title, subtitle, and description
+            pastYears: [
+                { 
+                    year: 1815, 
+                    x: 40.55, 
+                    label: '1815', 
+                    position: 'top',
+                    title: 'Earliest Recorded Major Earthquake in Bali',
+                    subtitle: '7.0 magnitude',
+                    description: 'One of the earliest recorded major earthquakes in Bali, destroying villages and temples .'
+                },
+                { 
+                    year: 1917, 
+                    x: 142.55, 
+                    label: '1917', 
+                    position: 'top',
+                    title: 'Great Bali Earthquake',
+                    subtitle: '6.0 magnitude',
+                    description: 'A devastating earthquake that destroyed estimated 2,400 temples.'
+                },
+                { 
+                    year: 1976, 
+                    x: 201.55, 
+                    label: '1976', 
+                    position: 'top',
+                    title: 'Seririt Earthquake',
+                    subtitle: '6.6 magnitude',
+                    description: 'A devastating earthquake that hit Nortern Bali. It estimated destroyed 80,000 houses and temples.'
+                },
+                { 
+                    year: 2011, 
+                    x: 233.55, 
+                    label: '2011', 
+                    position: 'top',
+                    title: 'Earthquake',
+                    subtitle: '6.1 magnitude',
+                    description: 'A major earthquake that struck South-East Bali, causing significant damage to buildings and temples in the region.'
+                },
+                { 
+                    year: 1843, 
+                    x: 68.55, 
+                    label: '1843', 
+                    position: 'bottom', 
+                    triangle: true,
+                    title: 'Earliest Mt. Agung Eruption Record',
+                    subtitle: 'Volcano eruption',
+                    description: 'The earliest recorded eruption of Mount Agung, Bali\'s highest and most sacred volcano.'
+                },
+                { 
+                    year: 1926, 
+                    x: 151.55, 
+                    label: '1926', 
+                    position: 'bottom', 
+                    triangle: true,
+                    title: 'Mount Batur Eruption',
+                    subtitle: 'Volcano eruption',
+                    description: 'A major eruption of Mount Batur in Bali, burying Ulun Danu temple and the village .'
+                },
+                { 
+                    year: 1963, 
+                    x: 188.55, 
+                    label: '1963', 
+                    position: 'bottom', 
+                    triangle: true,
+                    title: 'Mount Agung Eruption',
+                    subtitle: 'Volcano eruption',
+                    description: 'Mt. Agung latest major eruption damaged the mother temple Besakih and hundreds of smaller temples.'
+                }
+            ],
+            // Present/future years (orange dots)
+            futureYears: [
+                { year: 2050, x: 275.55, label: '2050', position: 'top', offset: '+25' },
+                { year: 2075, x: 300.55, label: '2075', position: 'top', offset: '+50' },
+                { year: 2125, x: 350.55, label: '2125', position: 'top', offset: '+100' },
+                { year: 2225, x: 450.55, label: '2225', position: 'top', offset: '+200' }
+            ],
+            verticalLines: [
+                { x: 39.65, dashed: true, style: 'thin' },
+                { x: 250.56, dashed: true, style: 'thick' },
+                { x: 275.56, dashed: true, style: 'thin' },
+                { x: 300.56, dashed: true, style: 'thin' },
+                { x: 350.56, dashed: true, style: 'thin' },
+                { x: 450.56, dashed: true, style: 'thin' }
+            ]
+        };
+
+        // Create tooltip div
+        const tooltip = d3.select('body')
+            .append('div')
+            .attr('class', 'tooltip');
+
+        // Create SVG
+        const width = 602;
+        const height = 328;
+        const timelineY = 201.75;
+
+        const svg = d3.select('#timeline')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .attr('viewBox', `0 0 ${width} ${height}`);
+
+        // Add gray background rectangle
+        svg.append('rect')
+            .attr('x', 8.94)
+            .attr('y', 0)
+            .attr('width', 241.61)
+            .attr('height', 328.25)
+            .attr('fill', '#fff');
+
+        // Create clip path
+        svg.append('defs')
+            .append('clipPath')
+            .attr('id', 'clipPath')
+            .append('rect')
+            .attr('x', 0)
+            .attr('y', 22.05)
+            .attr('width', 484.32)
+            .attr('height', 278.16);
+
+        // Add vertical dashed lines (in clipped area)
+        const clippedGroup = svg.append('g')
+            .attr('clip-path', 'url(#clipPath)');
+
+        timelineData.verticalLines.forEach(line => {
+            clippedGroup.append('line')
+                .attr('x1', line.x)
+                .attr('y1', 50)
+                .attr('x2', line.x)
+                .attr('y2', 300)
+                .attr('stroke', '#a7a9ac')
+                .attr('stroke-width', line.style === 'thick' ? 0.5 : 0.25)
+                .attr('stroke-dasharray', line.style === 'thick' ? '3,3' : '3,3')
+                .attr('fill', 'none');
+        });
+
+        // Add main timeline
+        svg.append('line')
+            .attr('x1', 40.55)
+            .attr('y1', timelineY)
+            .attr('x2', 601.8)
+            .attr('y2', timelineY)
+            .attr('stroke', '#939598')
+            .attr('stroke-width', 2);
+
+        // Add past year dots and labels with tooltip functionality
+        timelineData.pastYears.forEach(d => {
+            // Create a group for each marker for easier hover handling
+            const markerGroup = svg.append('g')
+                .attr('class', 'marker-group')
+                .style('cursor', 'pointer');
+            
+            // Add triangle marker or circle
+            if (d.triangle) {
+                const trianglePoints = [
+                    [d.x, timelineY - 6.44],
+                    [d.x - 6.65, timelineY + 5.09],
+                    [d.x + 6.66, timelineY + 5.09]
+                ];
+                
+                markerGroup.append('polygon')
+                    .attr('points', trianglePoints.map(p => p.join(',')).join(' '))
+                    .attr('fill', '#6d6e71');
+            } else {
+                markerGroup.append('circle')
+                    .attr('cx', d.x)
+                    .attr('cy', timelineY)
+                    .attr('r', 5.09)
+                    .attr('fill', '#231f20');
+            }
+
+
+            // Add hover events
+            markerGroup
+                .on('mouseover', function(event) {
+                    // Highlight the marker
+                    d3.select(this).select('circle, polygon')
+                        .transition()
+                        .duration(200)
+                        .attr('fill', '#fbb040');
+
+                    // Show tooltip
+                    tooltip.html(`
+                        <div class="tooltip-title">${d.title}</div>
+                        <div class="tooltip-subtitle">${d.subtitle}</div>
+                        <div class="tooltip-description">${d.description}</div>
+                    `)
+                    .classed('visible', true)
+                    .style('left', (event.pageX + 15) + 'px')
+                    .style('top', (event.pageY - 15) + 'px');
+                })
+                .on('mousemove', function(event) {
+                    tooltip
+                        .style('left', (event.pageX + 15) + 'px')
+                        .style('top', (event.pageY - 15) + 'px');
+                })
+                .on('mouseout', function() {
+                    // Reset marker color
+                    d3.select(this).select('circle')
+                        .transition()
+                        .duration(200)
+                        .attr('fill', '#231f20');
+                    
+                    d3.select(this).select('polygon')
+                        .transition()
+                        .duration(200)
+                        .attr('fill', '#6d6e71');
+
+                    // Hide tooltip
+                    tooltip.classed('visible', false);
+                });
+
+            // Add label
+            if (d.position === 'top') {
+                svg.append('text')
+                    .attr('x', d.x - 10)
+                    .attr('y', timelineY - 9)
+                    .attr('font-family', '"Poppins", sans-serif')
+                    .attr('font-size', '9px')
+                    .attr('fill', '#231f20')
+                    .style('pointer-events', 'none')
+                    .text(d.label);
+            } else if (d.position === 'bottom') {
+                svg.append('text')
+                    .attr('x', d.x - 10)
+                    .attr('y', timelineY + 18)
+                    .attr('font-family', '"Poppins", sans-serif')
+                    .attr('font-size', '9px')
+                    .attr('fill', '#231f20')
+                    .style('pointer-events', 'none')
+                    .text(d.label);
+            }
+        });
+
+        // Add future year dots and labels
+        timelineData.futureYears.forEach(d => {
+            // Add circle
+            svg.append('circle')
+                .attr('cx', d.x)
+                .attr('cy', timelineY)
+                .attr('r', 5.09)
+                .attr('fill', '#fbb040');
+
+            // Add label based on position
+            if (d.position === 'top') {
+                svg.append('text')
+                    .attr('x', d.x - 10)
+                    .attr('y', timelineY - 9)
+                    .attr('font-family', '"Poppins", sans-serif')
+                    .attr('font-size', '9px')
+                    .attr('fill', '#231f20')
+                    .text(d.label);
+            } else if (d.position === 'side') {
+                // 2024 is rotated -90 degrees
+                svg.append('text')
+                    .attr('transform', `translate(${d.x + 3}, 124.63) rotate(-90)`)
+                    .attr('font-family', '"Poppins", sans-serif')
+                    .attr('font-size', '12px')
+                    .attr('font-weight', '700')
+                    .attr('fill', '#231f20')
+                    .text(d.label);
+            }
+
+            // Add offset label
+            if (d.offset) {
+                svg.append('text')
+                    .attr('x', d.x - 10)
+                    .attr('y', 140.58)
+                    .attr('font-family', '"Poppins", sans-serif')
+                    .attr('font-size', '7px')
+                    .attr('font-weight', '700')
+                    .attr('fill', '#231f20')
+                    .text(d.offset);
+            }
+        });
+
+        // Add -210 label for 1815
+        svg.append('text')
+            .attr('x', 24.94)
+            .attr('y', 140.58)
+            .attr('font-family', '"Poppins", sans-serif')
+            .attr('font-size', '7px')
+            .attr('font-weight', '700')
+            .attr('fill', '#231f20')
+            .text('-210');
+
+        // Add butterfly decorations (simplified paths)
+        const butterflyPaths = `M256.12,69.34c-1-.55-1.81-.21-2.21.03-.12.07-.27,0-.29-.14-.08-.85-.44-3.12-1.86-4.38-.12-.11-.32-.01-.31.15l.79,14.89c0,.13.14.21.26.16.96-.4,4.44-2.2,4.83-7.46.11-1.56-.23-2.72-1.21-3.26h0ZM255.47,73.59c-.13,1.15-.75,2.15-1.13,2.69-.1.14-.33.08-.34-.1l-.2-4.39c0-.06.02-.12.07-.15,1.43-1.17,1.79.28,1.6,1.96h0Z M258.48,87.56c-.06-.04-.62.98-1.95,1.5-.63.25-1.24.31-1.72.3-1.28,0-1.92-.61-2.12-.76-.06.07-.57.74-.32,1.51.13.42.42.65.52.73.64.47,1.48.28,1.83.2,2.33-.53,3.85-3.42,3.75-3.49h0Z M260.72,78.66c.17.59.34,1.35.38,2.27.02.53,0,1.02-.04,1.44-.02.23.2.4.41.32.41-.16,1-.34,1.59-.31.16,0,.31-.11.32-.27.12-1.21.06-3.97-2.02-4.56-.82-.2-1.12.17-1,.37.31.5.36.74.36.74h0Z M264.3,79.1s-.28-.14-.52-.1-.11.2-.05.34c.06.13.57,1.49.38,2.78-.02.15.06.3.21.35.4.13.77.28,1.03.43.2.11.45-.02.47-.25.08-1.06-.05-2.98-1.52-3.56h0Z M256.91,90.58s1.39-.7,2.24-2.59c.84-1.89,1.86-4.1,3.43-4.65s2.39.21,2.74.58c.63.67.66,2.56-.74,3.14,0,0-.78.23-1.31-.32.29-.17.68-.44.35-.93s-1.23-.54-1.83.76c-.35.75-1.35,3.52-4.89,4.01h0Z M266.58,85.82c.39-.37,1.02-.88,1.53-.88.09-.93-.06-1.95-1.45-2.39.09,1.03-.01,2.31-.26,3.15-.03.11.1.2.19.12h0Z M271.13,85.61c-2.76-1.33-5.01,1.59-5.67,2.69-.1.16-.26.44-.47.66-.11.12-.23.22-.37.28-.1.04-.21.06-.32.06h-.07c-.45-.04-.8-.41-.8-.87,0-.29.14-.55.37-.71-.07-.03-.18-.06-.31-.07,0,0-.42-.02-.8.36-.48.48-.51,1.7.06,2.27.83.84,2.52,1.03,4.29-.65.47-.45.84-.76,1.66-1.3.54-.36.96-.49,1.46-.33.87.29.58,1.3,0,1.36-.43.04-.82-.31-.73-.72-.41.09-.8.67-.38,1.43.01.02.02.04.04.06.13.2.32.37.56.49.32.19.68.3,1.08.3.55,0,1.06-.22,1.43-.57.02-.01.03-.02.04-.04,0,0,0,0,.02-.02.08-.08.16-.18.23-.28,0-.01.02-.02.02-.04.02-.02.03-.04.04-.07.1-.17.18-.36.24-.57.35-1.25-.08-3-1.61-3.73h0Z M257.94,73.09c.04-.3.05-.6.02-.86,0,0,.02.33-.02.86Z M257.31,76.2c-.7,1.97-2.12,4.2-5.04,5.5-.05,1.2.96,1.17,1.77.85.82-.31,2.6-1.71,3.53-3.14,1.36,2.33.23,5.39-1.47,5.86-.69.19-.97-.16-.93-.5s.47-.55.82-.35c.19-1.04-.72-1.36-1.17-1.36-3.29,0-2.97,3.72-1.71,4.62,1.82,1.31,3.68.39,4.54-.31,1.28-1.04,2.6-2.6,2.6-6.13s-2.15-4.74-2.94-5.03h0Z M257.94,73.09c-.04.53-.12,1.28-.33,2.12-.02.07.02.14.08.16.19.08.37.16.54.26.07.04.15.02.19-.05.08-.16.17-.37.23-.63.03-.14.23-.15.27-.02.07.25.1.59-.03,1.06-.01.05,0,.1.04.14.27.23.49.48.67.72.06.08.2.06.24-.04,1.19-3.06-.98-4.22-1.67-4.51-.09-.04-.19.03-.19.13,0,.21,0,.43-.03.65Z`;
+
+        // Add right butterfly
+        svg.append('path')
+            .attr('d', butterflyPaths)
+            .attr('fill', '#9d7056');
+
+
+        //Add title
+        svg.append('text')
+            .attr('x', 70)
+            .attr('y', 30)
+            .attr('font-family', '"Poppins", sans-serif')
+            .attr('font-size', '16px')
+            .attr('fill', '#231f20')
+            .text('Limited records');
+        svg.append('text')
+            .attr('x', 300)
+            .attr('y', 30)
+            .attr('font-family', '"Poppins", sans-serif')
+            .attr('font-size', '16px')
+            .attr('fill', '#231f20')
+            .text('Comprehensive records');            
+
+        // Add left butterfly (mirrored)
+        const butterflyGroup = svg.append('g')
+            .attr('transform', 'scale(-1, 1) translate(-500, 0)');
+        
+        butterflyGroup.append('path')
+            .attr('d', butterflyPaths)
+            .attr('fill', '#9d7056');
+
+        // ====== ADD LEGEND ======
+        const legendX = 50;
+        const legendY = 290;
+        const legendSpacing =10;
+
+        // Legend group
+        const legend = svg.append('g')
+            .attr('class', 'legend')
+            .attr('transform', `translate(${legendX}, ${legendY})`);
+
+
+        // Circle legend item
+        legend.append('circle')
+            .attr('cx', 0)
+            .attr('cy', 0)
+            .attr('r', 3)
+            .attr('fill', '#231f20');
+
+        legend.append('text')
+            .attr('x', 12)
+            .attr('y', 4)
+            .attr('font-family', '"Poppins", sans-serif')
+            .attr('font-size', '7px')
+            .attr('fill', '#231f20')
+            .text('Major Earthquake');
+
+        // Triangle legend item
+        const triangleY = legendSpacing;
+        const trianglePoints = [
+            [0, triangleY - 3],
+            [-3, triangleY + 3],
+            [3, triangleY + 3]
+        ];
+        
+        legend.append('polygon')
+            .attr('points', trianglePoints.map(p => p.join(',')).join(' '))
+            .attr('fill', '#6d6e71');
+
+        legend.append('text')
+            .attr('x', 12)
+            .attr('y', triangleY + 4)
+            .attr('font-family', '"Poppins", sans-serif')
+            .attr('font-size', '7px')
+            .attr('fill', '#231f20')
+            .text('Major Volcano');
+
+    </script>
+                <div class="mt-5 has-text-centered"> <p>Balinese temples have undergone desctruction and reconstruction cycles for hundreds of years. 
+                With every recreation, we lost authenticity of the past architecture and values and before 2024, we had not had a serious effort to create records of the temples for future generations.
+                We aim to create record investment for generations in next 50 years, 100 years, and even more.</p></div>
+            </div>
+            <!-- end Importance Content -->
+
+            <!-- Approach Content -->
+            <div id="approach-content" class="tab-content">
+                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
+                    <h1 class="title">Placeholder</h1>
+                </div>
+            </div>
+            <!-- end Approach Content -->
+
+            <!-- Family Temples Content -->
+            <div id="family-content" class="tab-content">
+                <div class="video-container is-flex is-justify-content-center is-align-items-center"">
+                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"  class="img">
+                        <source src="/assets/Video-Sanggah.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    </p>
+                </div>
+                <p class="has-text-centered">A private family temple can only be accessed by the owner. Used with permission.</p>
+
+            </div>
+            <!-- end Family Temples Content -->
+
+            <!-- Public Temples Content -->
+            <div id="public-content" class="tab-content">
+                <div class="video-container is-flex is-justify-content-center is-align-items-center"">
+                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" class="img">
+                        <source src="/assets/candi-bentar.mp4" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    </p>
+                </div>
+                <p class="has-text-centered">Great gates of a public temple, Pura Sari Abangan, reconstructed from community contributions.</p>
+
+            </div>
+            <!-- end Public Temples Content -->
+
+            <!-- Application Content -->
+            <div id="applications-content" class="tab-content">
+                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
+                    <h1 class="title">Placeholder</h1>
+                </div>
+            </div>
+            <!-- end Application Content -->
+
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all tab elements
+        const tabs = document.querySelectorAll('.tabs li');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // Add click event to each tab
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('is-active'));
+
+                // Add active class to clicked tab
+                this
+                    .classList
+                    .add('is-active');
+
+                // Get the tab name
+                const tabName = this.getAttribute('data-tab');
+
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content
+                        .classList
+                        .remove('is-active');
+                });
+
+                // Show the selected tab content
+                const activeContent = document.getElementById(`${tabName}-content`);
+                activeContent
+                    .classList
+                    .add('is-active');
+
+                // Play the video in the active tab
+                const video = activeContent.querySelector('video');
+                if (video) {
+                    video.play();
+                }
+            });
+        });
+    });
+</script>
+      <section class="hero is-fullheight" id="map">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-size-2">Temples Documentation at Scale</h1>
+            <p class="is-size-5 mb-3">Creating 3D records of thousands of sacred places is crucial but it's <b>not an easy task</b>. We are committed to tackle this challenge.</p>
+            
+            <p></p>
+            <iframe class="mt-2 mb-3" src="https://map.badhi.id" width="100%" height="800" style="border:none;border-radius:10px;box-shadow:0 10px 10px lightgray"></iframe>
+            <small>
+                An interactive map depicting the locations of documented temples across Bali.
+                Go to the <a href="https://map.badhi.id" target="_blank" title="Bali Temples Map">map</a>. 
+            </small>
+        </div>
+    </div>
+</section>
+
+      <section class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">Technology Overview</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="mb-3 is-size-5">
+                        We employ advanced digital technologies such as 3D reconstruction and virtual reality combined with human and social factors to document and preserve Bali's rich cultural heritage. Our team of experts collaborates with local communities to ensure that these technologies are used in a culturally sensitive and sustainable manner.
+                    </p>
+                    <p class="is-size-5">
+                    With over 20 digital portfolios, our technology stack includes: mobile applications for data collection, dashboard for data management, 3D reconstruction pipeline, mixed reality for immersive experiences, and more.
+                    </p>
+
+                </div>
+            </div>
+                <style>
+        
+        .gallery-container {
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 5px;
+            padding: 30px;
+            min-width: max-content;
+        }
+
+        .image-card {
+            position: relative;
+            width: 250px;
+            height: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 5x rgba(0,0,0,0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .image-card:hover {
+            transform: scale(1.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .image-card:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .image-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .image-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+
+        /* Scrollbar styling */
+        .gallery-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>   
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=500&fit=crop" alt="Mountain Landscape">
+                <div class="image-overlay">
+                    <div class="image-title">Mobile App</div>
+                    <div class="image-description">Data collection</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Portrait">
+                <div class="image-overlay">
+                    <div class="image-title">Dashboard</div>
+                    <div class="image-description">Data monitoring</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500&h=500&fit=crop" alt="Nature">
+                <div class="image-overlay">
+                    <div class="image-title">Reconstruction</div>
+                    <div class="image-description">Create 3D models</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=500&h=500&fit=crop" alt="Abstract">
+                <div class="image-overlay">
+                    <div class="image-title">Viewer</div>
+                    <div class="image-description">Showcase to public</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&h=500&fit=crop" alt="Ocean">
+                <div class="image-overlay">
+                    <div class="image-title">Visualisations</div>
+                    <div class="image-description">VR/AR Applications</div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <p>See our github page for more: <a href="https://github.com/Bali-Digital-Heritage">https://github.com/Bali-Digital-Heritage</a></p>
+        </div>
+    </div>
+</section>
+      <section class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">Mobile App</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="mb-3 is-size-5">
+                        Our mobile application is designed to facilitate efficient data collection in the field. It allows users to capture high-quality images, record audio, and input metadata directly from their mobile devices. The app is user-friendly and optimized for use in remote locations with limited connectivity.
+                    </p>
+                </div>
+            </div>
+                <style>
+        
+        .gallery-container {
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 5px;
+            padding: 30px;
+            min-width: max-content;
+        }
+
+        .image-card-ma {
+            position: relative;
+            width: 290px;
+            height: 590px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 5x rgba(0,0,0,0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .image-card-ma img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .image-card-ma:hover {
+            transform: scale(1.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .image-card-ma:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay-ma {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #333;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .image-card-ma:hover .image-overlay-ma {
+            transform: translateY(0);
+        }
+
+        .image-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .image-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+
+        /* Scrollbar styling */
+        .gallery-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>   
+    <div class="gallery-container">
+        <div class="gallery">
+            
+            <div class="image-card-ma">
+                <img src="assets/ma-temples.png" alt="Temples">
+                <div class="image-overlay-ma">
+                    <div class="image-title">Temples</div>
+                    <div class="image-description">Data collection</div>
+                </div>
+            </div>
+
+            <div class="image-card-ma">
+                <img src="assets/ma-temple.png" alt="Temple details">
+                <div class="image-overlay-ma">
+                    <div class="image-title">Temple View</div>
+                    <div class="image-description">Data collection</div>
+                </div>
+            </div>
+
+            <div class="image-card-ma">
+                <img src="assets/ma-contributions.png" alt="Temple details">
+                <div class="image-overlay-ma">
+                    <div class="image-title">Temple's Contributions</div>
+                    <div class="image-description">Data collection</div>
+                </div>
+            </div>
+
+            <div class="image-card-ma">
+                <img src="assets/ma-mycontribution.png" alt="Temple details">
+                <div class="image-overlay-ma">
+                    <div class="image-title">My Contributions</div>
+                    <div class="image-description">Data collection</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        </div>
+    </div>
+</section>
+      <section class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">Dashboard</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="mb-3 is-size-5">
+                        The dashboard serves as the central hub for managing and visualising the collected data. It provides tools for data analysis, reporting, and monitoring the progress of various projects within the Bali Digital Heritage Initiative.
+                    </p>
+
+                </div>
+            </div>
+                                <figure class="image mt-4">
+                        <img class="img" src="assets/dashboard-ss.png" alt="Dashboard Overview"/>
+                        </figure>
+        </div>
+    </div>
+</section>
+      <section class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">Reconstruction</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="mb-3 is-size-5">
+                    Our reconstruction pipeline utilises advanced 3D Gaussian Splatting techniques to create accurate digital replicas of cultural heritage sites. This process involves selecting frames from contribution videos, processing the data to generate 3D models, and refining these models to ensure fidelity to the original structures.
+                    </p>
+                </div>
+            </div>
+            <div class="level">
+    <div class="level-item">
+        <div>
+            <img src="assets/video-p27.png" style="max-width:150px" />
+            <p>Video contribution</p>
+        </div>
+    </div>
+    <div class="level-item">
+        <div>
+            <img class="img" src="assets/p27-images.png" style="max-width: 200px"/>
+            <p>Frames selection</p>
+        </div>
+         <div class="mt-5">
+            <img class="img" src="assets/training.png" style="max-width: 200px"/>
+            <p>Reconstruction</p>
+        </div>
+    </div>
+    <div class="level-item">
+        <div>
+            <video width="900" controls class="img">
+                <source src="assets/p27-render.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>            
+            <p>Final 3D Models</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.level {
+    display: flex;
+    align-items: flex-end; /* Aligns items to the bottom */
+}
+
+.level-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.level-item > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.level-item img,
+.level-item video {
+    margin-bottom: auto; /* Pushes the paragraph to the bottom */
+}
+
+.level-item p {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+</style>
+        </div>
+    </div>
+</section>
+      <section class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">Viewer</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="mb-3 is-size-5">
+                    Our web viewer allows local and global communities to explore and interact with the 3D models generated from our reconstruction pipeline. It provides an intuitive interface for navigating the models, viewing details, and accessing related information about each  temple.
+                    </p>
+                </div>
+            </div>
+        <figure class="image mt-4">
+            <img class="img" src="assets/3d-viewer.png" alt="3D Viewer Overview"/>
+        </figure>
+        <figure class="image mt-4">
+            <img class="img" src="assets/contribution-list-by-temple.png" alt="3D Viewer Overview"/>
+        </figure>
+        <div class="mt-3"> <small>Screenshots of initial version of the viewer.</small></div>
+        </div>
+
+    </div>
+</section>
+      <section class="hero is-fullheight" id="about">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title is-size-1">Visualisations</h1>
+                    <h2 class="subtitle"></h2>
+                </div>
+                <div class="column is-two-thirds">
+                    <p class="mb-3 is-size-5">
+                    We explore various visualisation techniques to present the reconstructed 3D models and associated data in engaging and informative ways. These visualisations aim to enhance understanding and appreciation of Bali's cultural heritage among diverse audiences.
+                    </p>
+                </div>
+            </div>
+            <video class="img" width="100%" controls>
+                <source src="assets/avp-viewer.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="mt-2"> <small>One of the visualisation we are exploring using Apple's Vision Pro. Built using MetalSplatter.</small>
+        </div>
+    </div>
+</section>
+
+   

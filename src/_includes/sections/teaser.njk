@@ -1,0 +1,177 @@
+<style>
+    .logo-small {
+        width: 100px;
+    }
+
+    .hero.is-fullheight {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .video-container {
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+        margin-top: 2rem;
+    }
+
+    .tab-content {
+        display: none;
+        height: 760px;
+    }
+
+    .tab-content.is-active {
+        display: block;
+    }
+
+    .tabs li {
+        border: 1px solid lightgray;
+    }
+
+    .tab-list li a {
+        cursor: pointer;
+    }
+</style>
+
+<section class="hero is-fullheight" id="temple">
+    <div class="hero-body info-parent">
+        <div class="container">
+            <h1 class="has-text-centered is-size-1 has-text-weight-semibold">Bali Digital Heritage Initiative</h1>
+            <h2 class="has-text-centered is-size-4 pb-5">{{ i18n[page.lang].temple.title | safe }}</h1>
+
+<!-- Tabs Navigation -->
+            <div class="tabs is-centered mt-5">
+                <ul class="tabs-list">
+                    <li class="is-active" data-tab="overview">
+                        <a class="is-size-5">Overview</a>
+                    </li>
+                    <li data-tab="importance">
+                        <a class="is-size-5 ">Future Investment</a>
+                    </li>
+                    <li data-tab="approach">
+                        <a class="is-size-5 ">Our Approach</a>
+                    </li>
+                    <li data-tab="family">
+                        <a class="is-size-5 ">Family Temples</a>
+                    </li>
+                    <li data-tab="public">
+                        <a class="is-size-5 ">Public Temples</a>
+                    </li>
+                    <li data-tab="applications">
+                        <a class="is-size-5">Applications</a>
+                    </li>
+                </ul>
+            </div>
+<!-- End Tabs Navigation -->
+
+            <!-- Overview Content -->
+            <div id="overview-content" class="tab-content is-active">
+                <figure class="image mt-4">
+                    <img class="img" src="/assets/badhi-banner-cut-min.png" alt="Temple Overview"/>
+                </figure>
+                 <div class="mt-5 has-text-centered"> <p>We aim to empower Balinese communities to preserve their cultural heritage for future generations. 
+                 We believe participatory approach — data by people for people — is the best way to achieve documentation that is sustainable and at scale. </p></div>
+            </div>
+            <!-- end Overview Content -->
+
+            <!-- Importance Content -->
+            <div id="importance-content" class="tab-content">
+                {% include "../components/timeline.njk" %}
+                <div class="mt-5 has-text-centered"> <p>Balinese temples have undergone desctruction and reconstruction cycles for hundreds of years. 
+                With every recreation, we lost authenticity of the past architecture and values and before 2024, we had not had a serious effort to create records of the temples for future generations.
+                We aim to create record investment for generations in next 50 years, 100 years, and even more.</p></div>
+            </div>
+            <!-- end Importance Content -->
+
+            <!-- Approach Content -->
+            <div id="approach-content" class="tab-content">
+                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
+                    <h1 class="title">Placeholder</h1>
+                </div>
+            </div>
+            <!-- end Approach Content -->
+
+            <!-- Family Temples Content -->
+            <div id="family-content" class="tab-content">
+                <div class="video-container is-flex is-justify-content-center is-align-items-center"">
+                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"  class="img">
+                        <source src="/assets/Video-Sanggah.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    </p>
+                </div>
+                <p class="has-text-centered">A private family temple can only be accessed by the owner. Used with permission.</p>
+
+            </div>
+            <!-- end Family Temples Content -->
+
+            <!-- Public Temples Content -->
+            <div id="public-content" class="tab-content">
+                <div class="video-container is-flex is-justify-content-center is-align-items-center"">
+                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" class="img">
+                        <source src="/assets/candi-bentar.mp4" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                    </p>
+                </div>
+                <p class="has-text-centered">Great gates of a public temple, Pura Sari Abangan, reconstructed from community contributions.</p>
+
+            </div>
+            <!-- end Public Temples Content -->
+
+            <!-- Application Content -->
+            <div id="applications-content" class="tab-content">
+                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
+                    <h1 class="title">Placeholder</h1>
+                </div>
+            </div>
+            <!-- end Application Content -->
+
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all tab elements
+        const tabs = document.querySelectorAll('.tabs li');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // Add click event to each tab
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('is-active'));
+
+                // Add active class to clicked tab
+                this
+                    .classList
+                    .add('is-active');
+
+                // Get the tab name
+                const tabName = this.getAttribute('data-tab');
+
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content
+                        .classList
+                        .remove('is-active');
+                });
+
+                // Show the selected tab content
+                const activeContent = document.getElementById(`${tabName}-content`);
+                activeContent
+                    .classList
+                    .add('is-active');
+
+                // Play the video in the active tab
+                const video = activeContent.querySelector('video');
+                if (video) {
+                    video.play();
+                }
+            });
+        });
+    });
+</script>

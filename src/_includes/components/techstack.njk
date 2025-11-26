@@ -1,0 +1,133 @@
+    <style>
+        
+        .gallery-container {
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 5px;
+            padding: 30px;
+            min-width: max-content;
+        }
+
+        .image-card {
+            position: relative;
+            width: 250px;
+            height: 180px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 5x rgba(0,0,0,0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .image-card:hover {
+            transform: scale(1.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .image-card:hover .image-overlay {
+            transform: translateY(0);
+        }
+
+        .image-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .image-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+
+        /* Scrollbar styling */
+        .gallery-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body>   
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="image-card">
+                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Mountain Landscape">
+                <div class="image-overlay">
+                    <div class="image-title">Mobile App</div>
+                    <div class="image-description">Data collection</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Portrait">
+                <div class="image-overlay">
+                    <div class="image-title">Dashboard</div>
+                    <div class="image-description">Data monitoring</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Nature">
+                <div class="image-overlay">
+                    <div class="image-title">Reconstruction</div>
+                    <div class="image-description">Create 3D models</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Abstract">
+                <div class="image-overlay">
+                    <div class="image-title">Viewer</div>
+                    <div class="image-description">Showcase to public</div>
+                </div>
+            </div>
+
+            <div class="image-card">
+                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Ocean">
+                <div class="image-overlay">
+                    <div class="image-title">Visualisations</div>
+                    <div class="image-description">VR/AR Applications</div>
+                </div>
+            </div>
+        </div>
+    </div>

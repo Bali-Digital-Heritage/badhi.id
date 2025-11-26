@@ -1,0 +1,3 @@
+---
+layout: delete-account.njk
+---

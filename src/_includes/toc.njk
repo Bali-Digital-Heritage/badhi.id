@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html class="no-js"> <!--<![endif]-->
+  <html>
+  {% include "head.njk" %}
+    <body>
+    <!-- [if lt IE 7]> <p class="browsehappy"> You are using an <strong>outdated</strong> browser. Please <a
+    href="#">upgrade your browser</a> to improve your experience. </p> <![endif] -->
+      <main>
+      {% include "components/terms-conditions-content.njk" %}
+        <footer class="footer"> <div class="content has-text-centered">
+          <p>
+            <strong>Bali Digital Heritage Initiative</strong> website. Last updated November 2024. Send your feedback or issue to badhi.program[at]gmail.com.
+          </p>
+        </div>
+      </footer>
+    </main>
+    <script>
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          document.getElementById(targetId).scrollIntoView({behavior: 'smooth'});
+        });
+      });
+    </script>
+  </body>
+</html>

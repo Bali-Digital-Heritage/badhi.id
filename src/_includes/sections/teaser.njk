@@ -32,6 +32,9 @@
     .tab-list li a {
         cursor: pointer;
     }
+    .tabs li.is-active a {
+    font-weight: bold;
+}
 </style>
 
 <section class="hero is-fullheight" id="temple">
@@ -47,10 +50,10 @@
                         <a class="is-size-5">Overview</a>
                     </li>
                     <li data-tab="importance">
-                        <a class="is-size-5 ">Future Investment</a>
+                        <a class="is-size-5 ">Importance</a>
                     </li>
                     <li data-tab="approach">
-                        <a class="is-size-5 ">Our Approach</a>
+                        <a class="is-size-5 ">Approach</a>
                     </li>
                     <li data-tab="family">
                         <a class="is-size-5 ">Family Temples</a>
@@ -66,48 +69,46 @@
 <!-- End Tabs Navigation -->
 
             <!-- Overview Content -->
-            <div id="overview-content" class="tab-content is-active">
+            <div id="overview-content" class="tab-content has-text-centered is-active">
                 <figure class="image mt-4">
                     <img class="img" src="/assets/badhi-banner-cut-min.png" alt="Temple Overview"/>
                 </figure>
-                 <div class="mt-5 has-text-centered"> <p>We aim to empower Balinese communities to preserve their cultural heritage for future generations. 
-                 We believe participatory approach — data by people for people — is the best way to achieve documentation that is sustainable and at scale. </p></div>
+                 <div class="is-size-5 mt-5 has-text-centered"> <p>We aim to empower Balinese communities to preserve their cultural heritage for future generations. We believe a participatory approach — data by people for people — is the best way to achieve documentation that is scalable, sustainable and culturally safe.</p></div>
             </div>
             <!-- end Overview Content -->
 
             <!-- Importance Content -->
-            <div id="importance-content" class="tab-content">
+            <div id="importance-content" class="tab-content has-text-centered">
                 {% include "../components/timeline.njk" %}
-                <div class="mt-5 has-text-centered"> <p>Balinese temples have undergone desctruction and reconstruction cycles for hundreds of years. 
-                With every recreation, we lost authenticity of the past architecture and values and before 2024, we had not had a serious effort to create records of the temples for future generations.
-                We aim to create record investment for generations in next 50 years, 100 years, and even more.</p></div>
+                <div class=" is-size-5 mt-5 has-text-centered"> <p>Balinese temples have undergone cycles of destruction and reconstruction for hundreds of years. With each recreation, we have lost the authenticity of past architecture and values, and before 2024, there had been no serious effort to create records of the temples for future generations. We aim to create a record for generations over the next 50 years, 100 years and beyond.</p></div>
             </div>
             <!-- end Importance Content -->
 
             <!-- Approach Content -->
-            <div id="approach-content" class="tab-content">
-                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
-                    <h1 class="title">Placeholder</h1>
-                </div>
+            <div id="approach-content" class="tab-content has-text-centered">
+                <figure class="pt-5">
+                    <img src="/assets/approach.png" alt="Our Approach"/>
+                </figure>
+                 <div class="is-size-5 mt-5 has-text-centered"> <p>Our approach is centred around community participation. Local communities contribute videos of temples and temple parts in their areas. We then use these videos to create high-quality 3D records of the temples. The videos, 3D models and metadata of the temples are all looped back to the communities. <b>We envision the data collection campaign that runs every 5 years where, for a number of months, everyone in Bali contributes video records.</b></p></div>
             </div>
             <!-- end Approach Content -->
 
             <!-- Family Temples Content -->
-            <div id="family-content" class="tab-content">
+            <div id="family-content" class="tab-content has-text-centered">
                 <div class="video-container is-flex is-justify-content-center is-align-items-center"">
-                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"  class="img">
+                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"  >
                         <source src="/assets/Video-Sanggah.webm" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
                     </p>
                 </div>
-                <p class="has-text-centered">A private family temple can only be accessed by the owner. Used with permission.</p>
-
+               <div class="is-size-5 mt-5 has-text-centered"> <p>On our platform, <b>private family temples</b> can only be accessed by the owner, ensuring data privacy. This video is used with permission.</p>
+    </div>
             </div>
             <!-- end Family Temples Content -->
 
             <!-- Public Temples Content -->
-            <div id="public-content" class="tab-content">
+            <div id="public-content" class="tab-content has-text-centered">
                 <div class="video-container is-flex is-justify-content-center is-align-items-center"">
                     <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" class="img">
                         <source src="/assets/candi-bentar.mp4" type="video/webm">
@@ -115,16 +116,18 @@
                     </video>
                     </p>
                 </div>
-                <p class="has-text-centered">Great gates of a public temple, Pura Sari Abangan, reconstructed from community contributions.</p>
-
+                <div class="is-size-5 mt-5 has-text-centered"><p>Public temples can be seen and contributed to by anyone. This video shows the great gates of Pura Sari Abangan, reconstructed from community contributions. This temple was built between the 8th and 11th centuries.</p>
+</div>
             </div>
             <!-- end Public Temples Content -->
 
             <!-- Application Content -->
-            <div id="applications-content" class="tab-content">
-                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
-                    <h1 class="title">Placeholder</h1>
-                </div>
+            <div id="applications-content" class="tab-content has-text-centered">
+                <figure class="pt-5 ">
+                    <img src="/assets/avp-ss.png" alt="Applications" class="img"/>
+                </figure>
+                <div class="is-size-5 mt-5 has-text-centered"><p>With the amount of collected records, the potential applications for cultural heritage preservation and education are enormous. This is an example of immersive visualisation of a temple.</p>
+</div>
             </div>
             <!-- end Application Content -->
 

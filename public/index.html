@@ -46,11 +46,8 @@
             <div class="navbar-end">
               <a class="navbar-item" href="/">Home</a>
               <a class="navbar-item" href="/about">About</a>
-              <a class="navbar-item" href="#team">Updates</a>
-              <a class="navbar-item" href="#projects">Portfolios</a>
-              <a class="navbar-item" href="#projects">Research & Teaching</a>
-              <a class="navbar-item" href="#team">Team</a>
-              <a class="navbar-item" href="#contact">Contact</a>
+              <a class="navbar-item" href="/research">Research</a>
+              <a class="navbar-item" href="/contact">Contact</a>
             </div>
           </div>
         </div>
@@ -92,13 +89,16 @@
     .tab-list li a {
         cursor: pointer;
     }
+    .tabs li.is-active a {
+    font-weight: bold;
+}
 </style>
 
 <section class="hero is-fullheight" id="temple">
     <div class="hero-body info-parent">
         <div class="container">
             <h1 class="has-text-centered is-size-1 has-text-weight-semibold">Bali Digital Heritage Initiative</h1>
-            <h2 class="has-text-centered is-size-4 pb-5">We create a platform for 3D-recording more than 5,000 Balinese temples, <br/> sustainably and collaboratively.</h1>
+            <h2 class="has-text-centered is-size-4 pb-5">We create a platform for 3D-recording more than 5,000 Balinese temples <br/> safely, sustainably, and collaboratively.</h1>
 
 <!-- Tabs Navigation -->
             <div class="tabs is-centered mt-5">
@@ -107,10 +107,10 @@
                         <a class="is-size-5">Overview</a>
                     </li>
                     <li data-tab="importance">
-                        <a class="is-size-5 ">Future Investment</a>
+                        <a class="is-size-5 ">Importance</a>
                     </li>
                     <li data-tab="approach">
-                        <a class="is-size-5 ">Our Approach</a>
+                        <a class="is-size-5 ">Approach</a>
                     </li>
                     <li data-tab="family">
                         <a class="is-size-5 ">Family Temples</a>
@@ -126,17 +126,16 @@
 <!-- End Tabs Navigation -->
 
             <!-- Overview Content -->
-            <div id="overview-content" class="tab-content is-active">
+            <div id="overview-content" class="tab-content has-text-centered is-active">
                 <figure class="image mt-4">
                     <img class="img" src="/assets/badhi-banner-cut-min.png" alt="Temple Overview"/>
                 </figure>
-                 <div class="mt-5 has-text-centered"> <p>We aim to empower Balinese communities to preserve their cultural heritage for future generations. 
-                 We believe participatory approach — data by people for people — is the best way to achieve documentation that is sustainable and at scale. </p></div>
+                 <div class="is-size-5 mt-5 has-text-centered"> <p>We aim to empower Balinese communities to preserve their cultural heritage for future generations. We believe a participatory approach — data by people for people — is the best way to achieve documentation that is scalable, sustainable and culturally safe.</p></div>
             </div>
             <!-- end Overview Content -->
 
             <!-- Importance Content -->
-            <div id="importance-content" class="tab-content">
+            <div id="importance-content" class="tab-content has-text-centered">
                 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -495,14 +494,14 @@
             .attr('font-family', '"Poppins", sans-serif')
             .attr('font-size', '16px')
             .attr('fill', '#231f20')
-            .text('Limited records');
+            .text('Limited photos');
         svg.append('text')
-            .attr('x', 300)
+            .attr('x', 290)
             .attr('y', 30)
             .attr('font-family', '"Poppins", sans-serif')
             .attr('font-size', '16px')
             .attr('fill', '#231f20')
-            .text('Comprehensive records');            
+            .text('Comprehensive video and 3D records');            
 
         // Add left butterfly (mirrored)
         const butterflyGroup = svg.append('g')
@@ -559,36 +558,35 @@
             .text('Major Volcano');
 
     </script>
-                <div class="mt-5 has-text-centered"> <p>Balinese temples have undergone desctruction and reconstruction cycles for hundreds of years. 
-                With every recreation, we lost authenticity of the past architecture and values and before 2024, we had not had a serious effort to create records of the temples for future generations.
-                We aim to create record investment for generations in next 50 years, 100 years, and even more.</p></div>
+                <div class=" is-size-5 mt-5 has-text-centered"> <p>Balinese temples have undergone cycles of destruction and reconstruction for hundreds of years. With each recreation, we have lost the authenticity of past architecture and values, and before 2024, there had been no serious effort to create records of the temples for future generations. We aim to create a record for generations over the next 50 years, 100 years and beyond.</p></div>
             </div>
             <!-- end Importance Content -->
 
             <!-- Approach Content -->
-            <div id="approach-content" class="tab-content">
-                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
-                    <h1 class="title">Placeholder</h1>
-                </div>
+            <div id="approach-content" class="tab-content has-text-centered">
+                <figure class="pt-5">
+                    <img src="/assets/approach.png" alt="Our Approach"/>
+                </figure>
+                 <div class="is-size-5 mt-5 has-text-centered"> <p>Our approach is centred around community participation. Local communities contribute videos of temples and temple parts in their areas. We then use these videos to create high-quality 3D records of the temples. The videos, 3D models and metadata of the temples are all looped back to the communities. <b>We envision the data collection campaign that runs every 5 years where, for a number of months, everyone in Bali contributes video records.</b></p></div>
             </div>
             <!-- end Approach Content -->
 
             <!-- Family Temples Content -->
-            <div id="family-content" class="tab-content">
+            <div id="family-content" class="tab-content has-text-centered">
                 <div class="video-container is-flex is-justify-content-center is-align-items-center"">
-                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"  class="img">
+                    <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline"  >
                         <source src="/assets/Video-Sanggah.webm" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
                     </p>
                 </div>
-                <p class="has-text-centered">A private family temple can only be accessed by the owner. Used with permission.</p>
-
+               <div class="is-size-5 mt-5 has-text-centered"> <p>On our platform, <b>private family temples</b> can only be accessed by the owner, ensuring data privacy. This video is used with permission.</p>
+    </div>
             </div>
             <!-- end Family Temples Content -->
 
             <!-- Public Temples Content -->
-            <div id="public-content" class="tab-content">
+            <div id="public-content" class="tab-content has-text-centered">
                 <div class="video-container is-flex is-justify-content-center is-align-items-center"">
                     <video autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" class="img">
                         <source src="/assets/candi-bentar.mp4" type="video/webm">
@@ -596,16 +594,18 @@
                     </video>
                     </p>
                 </div>
-                <p class="has-text-centered">Great gates of a public temple, Pura Sari Abangan, reconstructed from community contributions.</p>
-
+                <div class="is-size-5 mt-5 has-text-centered"><p>Public temples can be seen and contributed to by anyone. This video shows the great gates of Pura Sari Abangan, reconstructed from community contributions. This temple was built between the 8th and 11th centuries.</p>
+</div>
             </div>
             <!-- end Public Temples Content -->
 
             <!-- Application Content -->
-            <div id="applications-content" class="tab-content">
-                <div style="height:638px; border: 1px solid lightgray;" class="is-flex is-justify-content-center is-align-items-center">
-                    <h1 class="title">Placeholder</h1>
-                </div>
+            <div id="applications-content" class="tab-content has-text-centered">
+                <figure class="pt-5 ">
+                    <img src="/assets/avp-ss.png" alt="Applications" class="img"/>
+                </figure>
+                <div class="is-size-5 mt-5 has-text-centered"><p>With the amount of collected records, the potential applications for cultural heritage preservation and education are enormous. This is an example of immersive visualisation of a temple.</p>
+</div>
             </div>
             <!-- end Application Content -->
 
@@ -687,7 +687,7 @@
                         We employ advanced digital technologies such as 3D reconstruction and virtual reality combined with human and social factors to document and preserve Bali's rich cultural heritage. Our team of experts collaborates with local communities to ensure that these technologies are used in a culturally sensitive and sustainable manner.
                     </p>
                     <p class="is-size-5">
-                    With over 20 digital portfolios, our technology stack includes: mobile applications for data collection, dashboard for data management, 3D reconstruction pipeline, mixed reality for immersive experiences, and more.
+                    With over 10 digital portfolios, our technology stack includes: mobile applications for data collection, dashboard for data management, 3D reconstruction pipeline, mixed reality for immersive experiences, and more.
                     </p>
 
                 </div>
@@ -779,48 +779,46 @@
         .gallery-container::-webkit-scrollbar-thumb:hover {
             background: rgba(255,255,255,0.5);
         }
+
+        
     </style>
 </head>
 <body>   
     <div class="gallery-container">
         <div class="gallery">
-            <div class="image-card">
-                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Mountain Landscape">
+            <div class="image-card has-background-dark">
+                <div class="image-title is-size-3 has-text-centered pt-6">Mobile App</div>
+
                 <div class="image-overlay">
-                    <div class="image-title">Mobile App</div>
-                    <div class="image-description">Data collection</div>
+                    <div class="image-description">Videos collection</div>
                 </div>
             </div>
 
-            <div class="image-card">
-                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Portrait">
+            <div class="image-card has-background-dark">
+                <div class="image-title is-size-3 has-text-centered pt-6">Dashboard</div>
                 <div class="image-overlay">
-                    <div class="image-title">Dashboard</div>
                     <div class="image-description">Data monitoring</div>
                 </div>
             </div>
 
-            <div class="image-card">
-                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Nature">
+            <div class="image-card has-background-dark">
+                 <div class="image-title is-size-4 has-text-centered pt-6">Reconstruction</div>
                 <div class="image-overlay">
-                    <div class="image-title">Reconstruction</div>
-                    <div class="image-description">Create 3D models</div>
+                    <div class="image-description">3D models creation</div>
                 </div>
             </div>
 
-            <div class="image-card">
-                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Abstract">
+            <div class="image-card has-background-dark">
+                 <div class="image-title is-size-3 has-text-centered pt-6">Viewer</div>
                 <div class="image-overlay">
-                    <div class="image-title">Viewer</div>
-                    <div class="image-description">Showcase to public</div>
+                    <div class="image-description">Public showcase</div>
                 </div>
             </div>
 
-            <div class="image-card">
-                <img src="https://placehold.co/600x400/000000/FFF?text=icon" alt="Ocean">
+            <div class="image-card has-background-dark">
+                 <div class="image-title is-size-4 has-text-centered pt-6">Visualisations</div>
                 <div class="image-overlay">
-                    <div class="image-title">Visualisations</div>
-                    <div class="image-description">VR/AR Applications</div>
+                    <div class="image-description">VR/AR applications</div>
                 </div>
             </div>
         </div>
@@ -840,7 +838,7 @@
                 </div>
                 <div class="column is-two-thirds">
                     <p class="mb-3 is-size-5">
-                        Our mobile application is designed to facilitate efficient data collection in the field. It allows users to capture high-quality images, record audio, and input metadata directly from their mobile devices. The app is user-friendly and optimized for use in remote locations with limited connectivity.
+                        Our mobile application is designed to facilitate efficient video contributions in the field. It allows community members to capture high-quality videos, record audio, and input metadata directly from their mobile devices. The app is user-friendly and optimised for use in remote locations with limited connectivity.
                     </p>
                 </div>
             </div>
@@ -941,7 +939,7 @@
                 <img src="assets/ma-temples.png" alt="Temples">
                 <div class="image-overlay-ma">
                     <div class="image-title">Temples</div>
-                    <div class="image-description">Data collection</div>
+                    <div class="image-description">Find or create temples</div>
                 </div>
             </div>
 
@@ -949,7 +947,7 @@
                 <img src="assets/ma-temple.png" alt="Temple details">
                 <div class="image-overlay-ma">
                     <div class="image-title">Temple View</div>
-                    <div class="image-description">Data collection</div>
+                    <div class="image-description">Details of each temple</div>
                 </div>
             </div>
 
@@ -957,7 +955,7 @@
                 <img src="assets/ma-contributions.png" alt="Temple details">
                 <div class="image-overlay-ma">
                     <div class="image-title">Temple's Contributions</div>
-                    <div class="image-description">Data collection</div>
+                    <div class="image-description">List of video contributions</div>
                 </div>
             </div>
 
@@ -965,7 +963,7 @@
                 <img src="assets/ma-mycontribution.png" alt="Temple details">
                 <div class="image-overlay-ma">
                     <div class="image-title">My Contributions</div>
-                    <div class="image-description">Data collection</div>
+                    <div class="image-description">See how much you have contributed</div>
                 </div>
             </div>
             
@@ -990,9 +988,11 @@
 
                 </div>
             </div>
-                                <figure class="image mt-4">
-                        <img class="img" src="assets/dashboard-ss.png" alt="Dashboard Overview"/>
-                        </figure>
+            <figure class="image mt-4">
+                <img class="img" src="assets/dashboard-ss.png" alt="Dashboard Overview"/>
+            </figure>
+            <div class="mt-3"> <small>Screenshots of initial version of the dashboard.</small></div>
+
         </div>
     </div>
 </section>
@@ -1007,7 +1007,7 @@
                 </div>
                 <div class="column is-two-thirds">
                     <p class="mb-3 is-size-5">
-                    Our reconstruction pipeline utilises advanced 3D Gaussian Splatting techniques to create accurate digital replicas of cultural heritage sites. This process involves selecting frames from contribution videos, processing the data to generate 3D models, and refining these models to ensure fidelity to the original structures.
+                    Our reconstruction pipeline utilises advanced 3D Gaussian Splatting techniques to create accurate digital replicas of the temples or temple parts. This process involves selecting frames from contribution videos, processing the data to generate 3D models, and refining these models to ensure fidelity to the original structures.
                     </p>
                 </div>
             </div>

@@ -1012,7 +1012,7 @@
             </div>
             <div class="level">
     <div class="level-item">
-        <div>
+        <div id="trigger">
             <img src="assets/video-p27.png" style="max-width:150px" />
             <p>Video contribution</p>
         </div>
@@ -1029,19 +1029,34 @@
     </div>
     <div class="level-item">
         <div>
-            <video width="900" controls class="img">
-                <source src="assets/p27-render.mp4" type="video/mp4">
+            <video width="900" controls>
+                <source src="assets/p27_render_video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>            
-            <p>Final 3D Models</p>
+            <p>Final 3D Record</p>
         </div>
+    </div>
+
+</div>
+
+<small>This is a public temple named Pelinggih Segara located in Sanur, Bali. It has a unique feature as it is made of corals.</small>
+
+<!-- Modal for video player -->
+<div id="videoModal" class="modal">
+    <div class="modal-content has-text-centered">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+        <video class="img" controls style="margin:auto; height:700px">
+            <source src="assets/p27.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="mt-4">This video was contributed by Komang Aditya Primantara <br/> on 20 March 2025.</p>
     </div>
 </div>
 
 <style>
 .level {
     display: flex;
-    align-items: flex-end; /* Aligns items to the bottom */
+    align-items: flex-end;
 }
 
 .level-item {
@@ -1057,7 +1072,7 @@
 
 .level-item img,
 .level-item video {
-    margin-bottom: auto; /* Pushes the paragraph to the bottom */
+    margin-bottom: auto;
 }
 
 .level-item p {
@@ -1066,7 +1081,100 @@
     font-size: 1.1rem;
     font-weight: 600;
 }
+
+#trigger {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#trigger:hover {
+    transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.modal-content video {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+}
 </style>
+
+<script>
+    const trigger = document.getElementById('trigger');
+    const modal = document.getElementById('videoModal');
+
+    trigger.addEventListener('click', function() {
+        modal.classList.add('active');
+    });
+
+    function closeModal() {
+        modal.classList.remove('active');
+        const video = modal.querySelector('video');
+        video.pause();
+    }
+
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>
+
         </div>
     </div>
 </section>
@@ -1129,9 +1237,8 @@
     <div class="section" style="padding: 0 0 2rem 0; border-bottom: 1px solid #e0e0e0;">
       <div class="mb-6"><h1>Supported by: </h1></div>
 
-
-<div class="columns is-multiline is-centered" >
-            <div class="column is-3-desktop is-5-tablet is-12-mobile has-text-centered">
+      <div class="columns is-multiline is-centered">
+        <div class="column is-3-desktop is-5-tablet is-12-mobile has-text-centered">
           <img src="/assets/emvis_logo.png" alt="Embodied Visualisation Group Logo" style="height:120px; width: auto; margin: 0 auto;">
         </div>
         <div class="column is-3-desktop is-5-tablet is-12-mobile has-text-centered">
@@ -1143,26 +1250,36 @@
         <div class="column is-3-desktop is-5-tablet is-12-mobile has-text-centered">
           <img src="/assets/Logo_undiksha.png" alt="Undiksha Logo" style="height: 120px; width: auto; margin: 0 auto;">
         </div>
-
       </div>
     </div>
 
     <!-- Content Columns -->
     <div class="columns is-multiline" style="padding-top: 2rem;">
       <!-- About Column -->
-      <div class="column is-3-desktop is-6-tablet is-12-mobile">
+      <div class="column is-2-desktop is-6-tablet is-12-mobile">
         <div class="mb-5">
           <h3 class="title is-5 mb-3">About Badhi</h3>
           <p class="is-size-7" style="color: #666; line-height: 1.6;">
             Established in 2024, BADHI is a joint effort among Australian and Indonesian academics who believe that current and future digital technology offers opportunities to improve the preservation and utilisation of Bali's cultural heritage for social good.
-
-
           </p>
         </div>
       </div>
 
+      <!-- Fundings Column -->
+      <div class="column is-2-desktop is-6-tablet is-12-mobile">
+        <div class="content is-small mb-5">
+          <h3 class="title is-5 mb-3">Fundings</h3>
+          <p class="is-size-7" style="color: #666; line-height: 1.6;">
+            We are grateful to our funders.
+          </p>
+          <ul class="is-size-7" style="color: #666;">
+            <li>Whyte Fund. Monash University. 2024 - 2025.</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- Products Column -->
-      <div class="column is-3-desktop is-6-tablet is-12-mobile">
+      <div class="column is-2-desktop is-6-tablet is-12-mobile">
         <div class="mb-5">
           <h3 class="title is-5 mb-3">BADHI Platform</h3>
           <ul style="color: #666;">
@@ -1171,13 +1288,12 @@
             <li class="mb-2"><a href="#" style="color: #666; text-decoration: none;" class="has-text-grey-dark">Reconstruction</a></li>
             <li class="mb-2"><a href="#" style="color: #666; text-decoration: none;" class="has-text-grey-dark">Viewer</a></li>
             <li class="mb-2"><a href="#" style="color: #666; text-decoration: none;" class="has-text-grey-dark">Visualisations</a></li>
-
           </ul>
         </div>
       </div>
 
       <!-- Resources Column -->
-      <div class="column is-3-desktop is-6-tablet is-12-mobile">
+      <div class="column is-2-desktop is-6-tablet is-12-mobile">
         <div class="mb-5">
           <h3 class="title is-5 mb-3">Resources</h3>
           <ul style="color: #666;">
@@ -1188,17 +1304,17 @@
       </div>
 
       <!-- Contact Column -->
-      <div class="column is-3-desktop is-6-tablet is-12-mobile">
+      <div class="column is-2-desktop is-6-tablet is-12-mobile">
         <div class="mb-5">
           <h3 class="title is-5 mb-3">Contact</h3>
           <ul style="color: #666; font-size: 0.9rem;">
             <li class="mb-2">
               <strong>Email:</strong><br>
-              <a href="mailto:info@badhi.id" style="color: #666; text-decoration: none;" class="has-text-grey-dark">badhi.program@gmail.com</a>
+              <a href="mailto:badhi.program@gmail.com" style="color: #666; text-decoration: none;" class="has-text-grey-dark">badhi.program@gmail.com</a>
             </li>
             <li class="mb-2">
               <strong>Social:</strong><br>
-              <a href="https://www.instagram.com/badhi.id/" target="_blank">Instagram</a>
+              <a href="https://www.instagram.com/badhi.id/" target="_blank" style="color: #666; text-decoration: none;" class="has-text-grey-dark">Instagram</a>
             </li>           
           </ul>
         </div>
@@ -1241,7 +1357,6 @@
     </div>
   </div>
 </footer>
-
     </main>
     <script>
 

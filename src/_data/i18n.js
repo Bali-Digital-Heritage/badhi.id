@@ -37,7 +37,7 @@ module.exports = {
     },
     team: {
       maintext:
-        'BADHI is mainly led by the collaboration between the <a href="https://www.monash.edu/it/hcc/embodied-visualisation" target="_blank">Embodied Visualisation Research Group</a> (<b>EmVis</b>) at Monash University and the <a href="https://research.undiksha.ac.id/vvip-rg/" target="_blank">Virtual Vision, Image, and Pattern Research Group</a> (<b>VVIP</b>) at the Universitas Pendidikan Ganesha. In the Participatory Digital Archiving of Balinese Temple project, we collaborate with recordkeeping experts at the <a href="https://www.monash.edu/it/hcc/digital-transformation" target="_blank">Digital Transformation Research Group </a>(Monash University) and action research experts at the <a href="https://www.monash.edu/it/hcc/action-lab" target="_blank"> Action Lab </a>(Monash University). ',
+        'BADHI is mainly led by the collaboration between the <a href="https://www.monash.edu/it/hcc/embodied-visualisation" target="_blank">Embodied Visualisation Research Group</a> (<b>EmVis</b>) at Monash University and the <a href="https://research.undiksha.ac.id/vvip-rg/" target="_blank">Virtual Vision, Image, and Pattern Research Group</a> (<b>VVIP</b>) at the Universitas Pendidikan Ganesha. In the Whyte Fund project (2024 - 2025), we collaborate with recordkeeping experts at the <a href="https://www.monash.edu/it/hcc/digital-transformation" target="_blank">Digital Transformation Research Group </a>(Monash University) and action research experts at the <a href="https://www.monash.edu/it/hcc/action-lab" target="_blank"> Action Lab </a>(Monash University). ',
       title: "Team",
       academicstext: "Main academics:",
       projectsacademic: "Projects' collaborators:",

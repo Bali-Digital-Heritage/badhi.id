@@ -51,7 +51,7 @@ module.exports = {
       follow: "Follow our updates on",
       link: "Several related links:",
       maintext:
-        "If you are interested in supporting or joining our effort, please reach out to us at badhi.program[at]gmail.com",
+        "If you are interested in supporting or joining our effort, please reach out to us at kadek.satriadi[at]monash.edu",
       phdtext:
         'If you are interested in <b>PhD</b> around this topic, let use know by sending an expression of interest <a href="https://supervisorconnect.it.monash.edu/projects/research/visualisation-technology-cultural-heritage-preservation" target="_blank"> here</a>.',
     },
